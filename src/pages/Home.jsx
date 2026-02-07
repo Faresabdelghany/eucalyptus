@@ -14,9 +14,9 @@ function Home() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-2xl">
-            <p className="reveal text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-6">Portland's Premier Cabinet Makers</p>
+            <p className="reveal text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-6">Cairo's Premier Cabinet Makers</p>
             <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-warm-cream leading-[1.1] tracking-tight">Cabinets Built by Hand, Made to Last</h1>
-            <p className="reveal reveal-delay-2 mt-8 text-lg lg:text-xl text-warm-cream/70 leading-relaxed max-w-lg">For over 20 years, our family has been crafting custom cabinetry for homes across the Portland area. No assembly lines. No shortcuts. Just honest woodworking built around your life.</p>
+            <p className="reveal reveal-delay-2 mt-8 text-lg lg:text-xl text-warm-cream/70 leading-relaxed max-w-lg">For over 20 years, our family has been crafting custom cabinetry for homes across the Cairo area. No assembly lines. No shortcuts. Just honest woodworking built around your life.</p>
             <div className="reveal reveal-delay-3 mt-10 flex flex-wrap gap-4">
               <Link to="/contact" className="inline-flex items-center px-8 py-4 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                 Start Your Project

@@ -14,7 +14,7 @@ function About() {
         </div>
         <div className="relative z-10 text-center px-6">
           <p className="reveal text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Our Story</p>
-          <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-bold text-warm-cream tracking-tight">Built on Family, Rooted in Portland</h1>
+          <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-bold text-warm-cream tracking-tight">Built on Family, Rooted in Cairo</h1>
           <p className="reveal reveal-delay-2 mt-6 text-lg text-warm-cream/70 max-w-xl mx-auto leading-relaxed">We're a father-son cabinet shop that's been part of the Cairo community for over two decades.</p>
         </div>
       </section>
@@ -34,7 +34,7 @@ function About() {
               <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Our Story</h2>
               <div className="mt-8 space-y-6 text-muted leading-relaxed">
                 <p>Cedar &amp; Stone started in 2003 in a two-car garage on Johnson Creek Blvd, when Mike Harlan and his son David decided to turn a lifelong woodworking hobby into something more. Mike had spent 15 years in commercial construction and knew there was a gap between the mass-produced cabinets builders were installing and what homeowners actually wanted. David had just finished an apprenticeship with a furniture maker in Bend. Together, they had the skills, the tools, and a stubborn belief that people still valued things built by hand.</p>
-                <p>Word spread quickly. Their first clients were neighbors, then friends of neighbors, then contractors who kept hearing the same thing: these guys build it right. Within a few years, the garage gave way to a proper workshop, and the two-person crew grew to a small team of skilled woodworkers who share the same standards. Today, we've completed over 800 projects across the Portland metro area, but we still run things the same way: one project at a time, one family at a time.</p>
+                <p>Word spread quickly. Their first clients were neighbors, then friends of neighbors, then contractors who kept hearing the same thing: these guys build it right. Within a few years, the garage gave way to a proper workshop, and the two-person crew grew to a small team of skilled woodworkers who share the same standards. Today, we've completed over 800 projects across the greater Cairo area, but we still run things the same way: one project at a time, one family at a time.</p>
                 <p>We live here. We shop at the same stores, sit in the same traffic, and cheer for the same teams. When we build cabinets for your home, we're building them for a neighbor. That matters to us.</p>
               </div>
             </div>

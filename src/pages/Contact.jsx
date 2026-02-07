@@ -156,7 +156,7 @@ function Contact() {
               <div className="w-full h-px bg-charcoal/10"></div>
               <div className="bg-deep-walnut/5 rounded-xl p-6 border border-deep-walnut/10">
                 <h3 className="font-semibold text-charcoal mb-2 font-[Playfair_Display]">Free In-Home Consultations</h3>
-                <p className="text-sm text-muted leading-relaxed">We offer complimentary in-home consultations throughout the Portland metro area. Let us come to you to discuss your project, take measurements, and provide a detailed estimate.</p>
+                <p className="text-sm text-muted leading-relaxed">We offer complimentary in-home consultations throughout the greater Cairo area. Let us come to you to discuss your project, take measurements, and provide a detailed estimate.</p>
               </div>
             </div>
           </div>
