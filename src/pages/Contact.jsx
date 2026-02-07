@@ -103,13 +103,13 @@ function Contact() {
                   {status === 'success' && (
                     <div id="form-success" className="p-4 rounded-lg bg-sage/20 border border-sage/30 text-charcoal">
                       <p className="font-medium">Message Received!</p>
-                      <p className="text-sm text-muted mt-1">Thanks for reaching out. We typically respond within one business day. If your project is time-sensitive, give us a call at (503) 555-0147 and we'll get you on the calendar sooner.</p>
+                      <p className="text-sm text-muted mt-1">Thanks for reaching out. We typically respond within one business day. If your project is time-sensitive, give us a call at (02) 2516-8243 and we'll get you on the calendar sooner.</p>
                     </div>
                   )}
                   {status === 'error' && (
                     <div id="form-error" className="p-4 rounded-lg bg-red-50 border border-red-200 text-red-800">
                       <p className="font-medium">Something Went Wrong</p>
-                      <p className="text-sm mt-1">We weren't able to send your message. Please try again, or contact us directly at (503) 555-0147 or hello@cedarstone-cabinets.com.</p>
+                      <p className="text-sm mt-1">We weren't able to send your message. Please try again, or contact us directly at (02) 2516-8243 or hello@cedarstone-cabinets.com.</p>
                     </div>
                   )}
                 </form>
@@ -123,7 +123,7 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-charcoal">Phone</h3>
-                  <a href="tel:+15035550147" className="text-muted hover:text-amber transition-colors">(503) 555-0147</a>
+                  <a href="tel:+20225168243" className="text-muted hover:text-amber transition-colors">(02) 2516-8243</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">

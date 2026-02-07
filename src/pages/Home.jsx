@@ -142,9 +142,9 @@ function Home() {
                 Schedule Your Free Consultation
                 <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </Link>
-              <a href="tel:+15035550147" className="inline-flex items-center px-8 py-4 text-sm font-semibold text-warm-cream border border-warm-cream/30 rounded-md hover:border-amber hover:text-amber transition-all duration-300">
+              <a href="tel:+20225168243" className="inline-flex items-center px-8 py-4 text-sm font-semibold text-warm-cream border border-warm-cream/30 rounded-md hover:border-amber hover:text-amber transition-all duration-300">
                 <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                (503) 555-0147
+                (02) 2516-8243
               </a>
             </div>
           </div>
