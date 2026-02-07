@@ -15,7 +15,7 @@ function About() {
         <div className="relative z-10 text-center px-6">
           <p className="reveal text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Our Story</p>
           <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-bold text-warm-cream tracking-tight">Built on Family, Rooted in Portland</h1>
-          <p className="reveal reveal-delay-2 mt-6 text-lg text-warm-cream/70 max-w-xl mx-auto leading-relaxed">We're a father-son cabinet shop that's been part of the Milwaukie community for over two decades.</p>
+          <p className="reveal reveal-delay-2 mt-6 text-lg text-warm-cream/70 max-w-xl mx-auto leading-relaxed">We're a father-son cabinet shop that's been part of the Cairo community for over two decades.</p>
         </div>
       </section>
 
@@ -113,7 +113,7 @@ function About() {
                 <div className="flex-1 h-px bg-amber/20"></div>
               </div>
               <h3 className="text-lg font-semibold text-charcoal mb-3">Build</h3>
-              <p className="text-sm text-muted leading-relaxed">Your cabinets are handcrafted in our Milwaukie workshop. We keep you updated on progress and welcome shop visits if you want to see your project taking shape.</p>
+              <p className="text-sm text-muted leading-relaxed">Your cabinets are handcrafted in our Cairo workshop. We keep you updated on progress and welcome shop visits if you want to see your project taking shape.</p>
             </div>
             <div className="reveal reveal-delay-4 relative bg-ivory rounded-xl p-8 shadow-sm">
               <div className="flex items-center gap-4 mb-6">

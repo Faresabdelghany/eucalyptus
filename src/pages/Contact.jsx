@@ -109,7 +109,7 @@ function Contact() {
                   {status === 'error' && (
                     <div id="form-error" className="p-4 rounded-lg bg-red-50 border border-red-200 text-red-800">
                       <p className="font-medium">Something Went Wrong</p>
-                      <p className="text-sm mt-1">We weren't able to send your message. Please try again, or contact us directly at (503) 555-0147 or info@cedarandstone.com.</p>
+                      <p className="text-sm mt-1">We weren't able to send your message. Please try again, or contact us directly at (503) 555-0147 or hello@cedarstone-cabinets.com.</p>
                     </div>
                   )}
                 </form>
@@ -132,7 +132,7 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-charcoal">Email</h3>
-                  <a href="mailto:info@cedarandstone.com" className="text-muted hover:text-amber transition-colors">info@cedarandstone.com</a>
+                  <a href="mailto:hello@cedarstone-cabinets.com" className="text-muted hover:text-amber transition-colors">hello@cedarstone-cabinets.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -141,7 +141,7 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-charcoal">Workshop & Showroom</h3>
-                  <p className="text-muted">4825 SE Johnson Creek Blvd<br/>Milwaukie, OR 97222</p>
+                  <p className="text-muted">27 Road 9, Maadi<br/>Cairo, Egypt 11728</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -168,10 +168,10 @@ function Contact() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-10 reveal">
             <h2 className="text-2xl md:text-3xl font-bold font-[Playfair_Display] text-charcoal">Visit Our Showroom</h2>
-            <p className="mt-3 text-muted max-w-xl mx-auto">Stop by our workshop and showroom in Milwaukie to see our craftsmanship firsthand and explore material samples.</p>
+            <p className="mt-3 text-muted max-w-xl mx-auto">Stop by our workshop and showroom in Maadi, Cairo to see our craftsmanship firsthand and explore material samples.</p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg border border-charcoal/5 reveal reveal-delay-1">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.5!2d-122.6285!3d45.4435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI2JzM2LjYiTiAxMjLCsDM3JzQyLjYiVw!5e0!3m2!1sen!2sus!4v1700000000000" width="100%" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Cedar & Stone Cabinetry location on Google Maps"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.2!2d31.2579!3d29.9602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDU3JzM2LjciTiAzMcKwMTUnMjguNCJF!5e0!3m2!1sen!2seg!4v1700000000000" width="100%" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Cedar & Stone Cabinetry location on Google Maps"></iframe>
           </div>
         </div>
       </section>

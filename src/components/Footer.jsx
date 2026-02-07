@@ -14,7 +14,7 @@ function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-warm-cream/60 max-w-xs">
-              Handcrafted custom cabinetry, built in Milwaukie, Oregon. Serving the Portland metro area for over 20 years.
+              Handcrafted custom cabinetry, built in Cairo, Egypt. Serving the greater Cairo area for over 20 years.
             </p>
           </div>
           {/* Quick Links */}
@@ -46,13 +46,13 @@ function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
-                <span>4825 SE Johnson Creek Blvd<br/>Milwaukie, OR 97222</span>
+                <span>27 Road 9, Maadi<br/>Cairo, Egypt 11728</span>
               </li>
               <li className="flex items-start gap-3">
                 <svg className="w-4 h-4 mt-0.5 text-amber/60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
-                <a href="mailto:info@cedarandstone.com" className="hover:text-amber transition-colors">info@cedarandstone.com</a>
+                <a href="mailto:hello@cedarstone-cabinets.com" className="hover:text-amber transition-colors">hello@cedarstone-cabinets.com</a>
               </li>
               <li className="flex items-start gap-3">
                 <svg className="w-4 h-4 mt-0.5 text-amber/60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-warm-cream/40">&copy; 2026 Cedar &amp; Stone Cabinetry. All rights reserved.</p>
-          <p className="text-xs text-warm-cream/40">Handcrafted in Milwaukie, Oregon</p>
+          <p className="text-xs text-warm-cream/40">Handcrafted in Cairo, Egypt</p>
         </div>
       </div>
     </footer>
