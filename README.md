@@ -1,4 +1,4 @@
-# Timber & Grain Cabinetry
+# Cedar & Stone Cabinetry
 
 A handcrafted website for a custom cabinet maker based in Milwaukie, Oregon. Built with React, Vite, and Tailwind CSS v4.
 

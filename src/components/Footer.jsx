@@ -10,7 +10,7 @@ function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block">
               <span className="text-2xl font-bold text-warm-cream tracking-tight font-[Playfair_Display]">
-                Timber <span className="text-amber">&amp;</span> Grain
+                Cedar <span className="text-amber">&amp;</span> Stone
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-warm-cream/60 max-w-xs">
@@ -52,7 +52,7 @@ function Footer() {
                 <svg className="w-4 h-4 mt-0.5 text-amber/60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
-                <a href="mailto:info@timberandgrain.com" className="hover:text-amber transition-colors">info@timberandgrain.com</a>
+                <a href="mailto:info@cedarandstone.com" className="hover:text-amber transition-colors">info@cedarandstone.com</a>
               </li>
               <li className="flex items-start gap-3">
                 <svg className="w-4 h-4 mt-0.5 text-amber/60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,7 +65,7 @@ function Footer() {
         </div>
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-warm-cream/40">&copy; 2026 Timber &amp; Grain Cabinetry. All rights reserved.</p>
+          <p className="text-xs text-warm-cream/40">&copy; 2026 Cedar &amp; Stone Cabinetry. All rights reserved.</p>
           <p className="text-xs text-warm-cream/40">Handcrafted in Milwaukie, Oregon</p>
         </div>
       </div>

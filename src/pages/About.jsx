@@ -9,7 +9,7 @@ function About() {
       {/* Hero Banner */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/about-workshop.jpg" alt="Inside the Timber and Grain workshop" className="w-full h-full object-cover" />
+          <img src="/images/about-workshop.jpg" alt="Inside the Cedar and Stone workshop" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-charcoal/75"></div>
         </div>
         <div className="relative z-10 text-center px-6">
@@ -33,7 +33,7 @@ function About() {
               <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Who We Are</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Our Story</h2>
               <div className="mt-8 space-y-6 text-muted leading-relaxed">
-                <p>Timber &amp; Grain started in 2003 in a two-car garage on Johnson Creek Blvd, when Mike Harlan and his son David decided to turn a lifelong woodworking hobby into something more. Mike had spent 15 years in commercial construction and knew there was a gap between the mass-produced cabinets builders were installing and what homeowners actually wanted. David had just finished an apprenticeship with a furniture maker in Bend. Together, they had the skills, the tools, and a stubborn belief that people still valued things built by hand.</p>
+                <p>Cedar &amp; Stone started in 2003 in a two-car garage on Johnson Creek Blvd, when Mike Harlan and his son David decided to turn a lifelong woodworking hobby into something more. Mike had spent 15 years in commercial construction and knew there was a gap between the mass-produced cabinets builders were installing and what homeowners actually wanted. David had just finished an apprenticeship with a furniture maker in Bend. Together, they had the skills, the tools, and a stubborn belief that people still valued things built by hand.</p>
                 <p>Word spread quickly. Their first clients were neighbors, then friends of neighbors, then contractors who kept hearing the same thing: these guys build it right. Within a few years, the garage gave way to a proper workshop, and the two-person crew grew to a small team of skilled woodworkers who share the same standards. Today, we've completed over 800 projects across the Portland metro area, but we still run things the same way: one project at a time, one family at a time.</p>
                 <p>We live here. We shop at the same stores, sit in the same traffic, and cheer for the same teams. When we build cabinets for your home, we're building them for a neighbor. That matters to us.</p>
               </div>

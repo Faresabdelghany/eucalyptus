@@ -36,7 +36,7 @@ function Navbar() {
           {/* Logo / Brand */}
           <Link to="/" className="flex items-center gap-3 group">
             <span className="text-xl md:text-2xl font-bold text-warm-cream tracking-tight font-[Playfair_Display]">
-              Timber <span className="text-amber">&amp;</span> Grain
+              Cedar <span className="text-amber">&amp;</span> Stone
             </span>
             <span className="hidden sm:inline text-xs uppercase tracking-[0.25em] text-muted font-medium">
               Cabinetry

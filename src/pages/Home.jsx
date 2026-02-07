@@ -9,7 +9,7 @@ function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/hero-workshop.jpg" alt="Master craftsman at work in the Timber and Grain workshop" className="w-full h-full object-cover" />
+          <img src="/images/hero-workshop.jpg" alt="Master craftsman at work in the Cedar and Stone workshop" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-charcoal/40"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
@@ -129,7 +129,7 @@ function Home() {
       {/* CTA Section */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/about-workshop.jpg" alt="Timber and Grain workshop" className="w-full h-full object-cover" />
+          <img src="/images/about-workshop.jpg" alt="Cedar and Stone workshop" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-deep-walnut/85"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
