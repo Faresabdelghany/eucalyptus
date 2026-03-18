@@ -9,13 +9,13 @@ function About() {
       {/* Hero Banner */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/about-workshop.jpg" alt="Inside the Cedar and Stone workshop" className="w-full h-full object-cover" />
+          <img src="/images/about-workshop.jpg" alt="Inside the Eucalyptus Wood Pallet workshop in Cairo" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-charcoal/75"></div>
         </div>
         <div className="relative z-10 text-center px-6">
           <p className="reveal text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Our Story</p>
           <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-bold text-warm-cream tracking-tight">Built on Family, Rooted in Cairo</h1>
-          <p className="reveal reveal-delay-2 mt-6 text-lg text-warm-cream/70 max-w-xl mx-auto leading-relaxed">We're a father-son cabinet shop that's been part of the Cairo community for over two decades.</p>
+          <p className="reveal reveal-delay-2 mt-6 text-lg text-warm-cream/70 max-w-xl mx-auto leading-relaxed">We're a Cairo-based wood packaging manufacturer that has supplied pallets, boxes, and crates to businesses across Egypt for over two decades.</p>
         </div>
       </section>
 
@@ -25,17 +25,18 @@ function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="reveal-left relative order-2 lg:order-1">
               <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/images/wood-detail.jpg" alt="Close-up of hand-finished wood grain" className="w-full h-full object-cover" />
+                <img src="/images/about-pallet.png" alt="Craftsman building a wooden pallet" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -top-6 -left-6 w-32 h-32 border-2 border-amber/20 rounded-2xl -z-10"></div>
             </div>
             <div className="reveal-right order-1 lg:order-2">
-              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Who We Are</p>
+              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">WHO WE ARE</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Our Story</h2>
               <div className="mt-8 space-y-6 text-muted leading-relaxed">
-                <p>Cedar &amp; Stone started in 2003 in a two-car garage on Johnson Creek Blvd, when Mike Harlan and his son David decided to turn a lifelong woodworking hobby into something more. Mike had spent 15 years in commercial construction and knew there was a gap between the mass-produced cabinets builders were installing and what homeowners actually wanted. David had just finished an apprenticeship with a furniture maker in Bend. Together, they had the skills, the tools, and a stubborn belief that people still valued things built by hand.</p>
-                <p>Word spread quickly. Their first clients were neighbors, then friends of neighbors, then contractors who kept hearing the same thing: these guys build it right. Within a few years, the garage gave way to a proper workshop, and the two-person crew grew to a small team of skilled woodworkers who share the same standards. Today, we've completed over 800 projects across the greater Cairo area, but we still run things the same way: one project at a time, one family at a time.</p>
-                <p>We live here. We shop at the same stores, sit in the same traffic, and cheer for the same teams. When we build cabinets for your home, we're building them for a neighbor. That matters to us.</p>
+                <p>At Eucalyptus Wood Pallet, our story is defined by craftsmanship, reliability, and a clear commitment to excellence. From the very beginning, we set out to create wooden pallets, boxes, and crates that offer more than basic function. We wanted every product to reflect strength, precision, and a standard of quality that businesses can trust without hesitation.</p>
+                <p>Our approach is rooted in the belief that premium wood packaging plays an essential role in how products are stored, protected, and presented. For that reason, we focus on carefully selected materials, refined construction, and consistent finishing, ensuring that every pallet, box, and crate delivers both durability and a professional appearance. Each piece is built to serve demanding environments while maintaining the elegance and integrity of fine workmanship.</p>
+                <p>Over time, Eucalyptus Wood Pallet has become a trusted name for businesses seeking dependable packaging solutions tailored to real operational needs. Whether supporting logistics, warehousing, agriculture, retail, or export, our products are designed to perform with confidence and distinction.</p>
+                <p>What truly shapes our story is the pride we take in every detail. We do not simply manufacture wood packaging; we create solutions that embody trust, protection, and enduring value. Today, we continue to grow by upholding the same values that shaped our foundation: quality, precision, consistency, and lasting partnership.</p>
               </div>
             </div>
           </div>
@@ -57,7 +58,7 @@ function About() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-charcoal mb-4">Quality Materials</h3>
-              <p className="text-sm text-muted leading-relaxed">We source our hardwoods from mills in the Pacific Northwest whenever possible. Every board is hand-selected for grain, stability, and beauty. We don't use particleboard or MDF in structural components because your cabinets should last as long as your home.</p>
+              <p className="text-sm text-muted leading-relaxed">We work exclusively with eucalyptus wood — chosen for its natural density, moisture resistance, and load-bearing strength. Every batch is carefully selected before production. Your packaging is only as reliable as what it's built from, and we don't compromise on that.</p>
             </div>
             <div className="reveal reveal-delay-2 text-center p-8 lg:p-10">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber/10 mb-6">
@@ -67,7 +68,7 @@ function About() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-charcoal mb-4">Expert Craftsmanship</h3>
-              <p className="text-sm text-muted leading-relaxed">Our team averages over 12 years of woodworking experience. We use a blend of traditional joinery techniques and modern precision tools to build cabinets that are as strong as they are beautiful. Every drawer, every door, every shelf is built to a standard we'd want in our own kitchen.</p>
+              <p className="text-sm text-muted leading-relaxed">Our production team brings over 12 years of woodworking experience to every order. We use precise cutting, solid assembly, and consistent finishing to build packaging that holds up in warehouses, survives long-distance transport, and arrives looking professional every time.</p>
             </div>
             <div className="reveal reveal-delay-3 text-center p-8 lg:p-10">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber/10 mb-6">
@@ -76,7 +77,7 @@ function About() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-charcoal mb-4">Customer Focus</h3>
-              <p className="text-sm text-muted leading-relaxed">We listen before we build. Every project starts with a real conversation about how you live, what you need, and what matters to you. We keep you involved at every step, because the best results come from working together, not handing you a catalog and asking you to pick a style.</p>
+              <p className="text-sm text-muted leading-relaxed">We work directly with each client to understand their load requirements, dimensions, and operational needs. Whether you need standard sizes in bulk or fully custom solutions, we build around your business — not a fixed catalog. Most clients become long-term partners because we make it easy to reorder exactly what works.</p>
             </div>
           </div>
         </div>
@@ -88,7 +89,7 @@ function About() {
           <div className="reveal text-center max-w-2xl mx-auto mb-16 lg:mb-20">
             <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">How We Work</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-tight">From Vision to Reality</h2>
-            <p className="mt-6 text-lg text-muted leading-relaxed">From first conversation to final installation, here's what to expect.</p>
+            <p className="mt-6 text-lg text-muted leading-relaxed">From first conversation to final delivery, here's what to expect.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="reveal reveal-delay-1 relative bg-ivory rounded-xl p-8 shadow-sm">
@@ -97,7 +98,7 @@ function About() {
                 <div className="flex-1 h-px bg-amber/20"></div>
               </div>
               <h3 className="text-lg font-semibold text-charcoal mb-3">Consultation</h3>
-              <p className="text-sm text-muted leading-relaxed">We visit your home, take measurements, and talk through your goals, your style preferences, and your budget. This visit is free and comes with no obligations.</p>
+              <p className="text-sm text-muted leading-relaxed">We discuss your requirements — product dimensions, load capacity, quantities, and intended use. Whether you contact us by phone or visit our facility, this first conversation is free and comes with no obligations.</p>
             </div>
             <div className="reveal reveal-delay-2 relative bg-ivory rounded-xl p-8 shadow-sm">
               <div className="flex items-center gap-4 mb-6">
@@ -105,23 +106,23 @@ function About() {
                 <div className="flex-1 h-px bg-amber/20"></div>
               </div>
               <h3 className="text-lg font-semibold text-charcoal mb-3">Design</h3>
-              <p className="text-sm text-muted leading-relaxed">Based on our conversation, we create detailed plans and material selections for your approval. You'll see exactly what we're going to build before any wood is cut.</p>
+              <p className="text-sm text-muted leading-relaxed">Based on your requirements, we prepare specifications and a detailed quote for your approval. You'll confirm dimensions, quantities, and timeline before we begin production.</p>
             </div>
             <div className="reveal reveal-delay-3 relative bg-ivory rounded-xl p-8 shadow-sm">
               <div className="flex items-center gap-4 mb-6">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber text-charcoal text-sm font-bold">03</span>
                 <div className="flex-1 h-px bg-amber/20"></div>
               </div>
-              <h3 className="text-lg font-semibold text-charcoal mb-3">Build</h3>
-              <p className="text-sm text-muted leading-relaxed">Your cabinets are handcrafted in our Cairo workshop. We keep you updated on progress and welcome shop visits if you want to see your project taking shape.</p>
+              <h3 className="text-lg font-semibold text-charcoal mb-3">Production</h3>
+              <p className="text-sm text-muted leading-relaxed">Your order is manufactured in our Cairo workshop using quality eucalyptus wood. We keep you updated on progress and maintain consistent quality from the first unit to the last.</p>
             </div>
             <div className="reveal reveal-delay-4 relative bg-ivory rounded-xl p-8 shadow-sm">
               <div className="flex items-center gap-4 mb-6">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber text-charcoal text-sm font-bold">04</span>
                 <div className="flex-1 h-px bg-amber/20"></div>
               </div>
-              <h3 className="text-lg font-semibold text-charcoal mb-3">Install</h3>
-              <p className="text-sm text-muted leading-relaxed">Our installation crew handles everything with care. We protect your floors, clean up after ourselves, and don't leave until every door hangs true and every drawer glides smooth.</p>
+              <h3 className="text-lg font-semibold text-charcoal mb-3">Delivery</h3>
+              <p className="text-sm text-muted leading-relaxed">Your finished products are delivered on time and in full. Every order is inspected before it leaves our workshop so you receive packaging that's ready to go to work immediately.</p>
             </div>
           </div>
         </div>
@@ -137,7 +138,7 @@ function About() {
           <div className="reveal">
             <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-6">Ready to Start?</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-warm-cream leading-tight">Let's Talk About Your Project</h2>
-            <p className="mt-6 text-lg text-warm-cream/70 leading-relaxed max-w-2xl mx-auto">Whether you have a detailed plan or just a spark of an idea, we'd love to hear about it. Your first consultation is always free.</p>
+            <p className="mt-6 text-lg text-warm-cream/70 leading-relaxed max-w-2xl mx-auto">Whether you know exactly what you need or want help figuring out the right solution, we're happy to talk through it. Your first consultation is always free.</p>
             <Link to="/contact" className="inline-flex items-center mt-10 px-8 py-4 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
               Schedule a Free Consultation
               <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>

@@ -34,12 +34,10 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo / Brand */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <span className="text-xl md:text-2xl font-bold text-warm-cream tracking-tight font-[Playfair_Display]">
-              Cedar <span className="text-amber">&amp;</span> Stone
-            </span>
-            <span className="hidden sm:inline text-xs uppercase tracking-[0.25em] text-muted font-medium">
-              Cabinetry
+          <Link to="/" className="flex items-center gap-2 group ml-8">
+            <img src="/images/logo.png?v=2" alt="Eucalyptus Wood Pallet" className="h-[4.5rem] w-auto block flex-shrink-0" />
+            <span className="hidden sm:inline text-2xl font-extrabold text-warm-cream tracking-tight font-[Playfair_Display] leading-tight">
+              Eucalyptus <span className="text-amber">Wood</span> Pallet
             </span>
           </Link>
 

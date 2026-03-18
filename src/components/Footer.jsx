@@ -8,13 +8,14 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-block">
-              <span className="text-2xl font-bold text-warm-cream tracking-tight font-[Playfair_Display]">
-                Cedar <span className="text-amber">&amp;</span> Stone
+            <Link to="/" className="inline-flex items-center gap-3">
+              <img src="/images/logo.png?v=2" alt="Eucalyptus Wood Pallet" className="h-14 w-auto block flex-shrink-0" />
+              <span className="text-xl font-bold text-warm-cream tracking-tight font-[Playfair_Display] leading-tight">
+                Eucalyptus <span className="text-amber">Wood</span> Pallet
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-warm-cream/60 max-w-xs">
-              Handcrafted custom cabinetry, built in Cairo, Egypt. Serving the greater Cairo area for over 20 years.
+              Premium eucalyptus wood pallets, crafted in Cairo, Egypt. Serving local and international markets with quality and precision.
             </p>
           </div>
           {/* Quick Links */}
@@ -31,10 +32,10 @@ function Footer() {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-amber mb-6">Services</h4>
             <ul className="space-y-3">
-              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Kitchen Cabinetry</Link></li>
-              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Bathroom Vanities</Link></li>
-              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Built-In Shelving</Link></li>
-              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Cabinet Refacing</Link></li>
+              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Wooden Pallets</Link></li>
+              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Wooden Boxes</Link></li>
+              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Wooden Crates</Link></li>
+              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Custom Packaging</Link></li>
             </ul>
           </div>
           {/* Contact Info */}
@@ -52,7 +53,7 @@ function Footer() {
                 <svg className="w-4 h-4 mt-0.5 text-amber/60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
-                <a href="mailto:hello@cedarstone-cabinets.com" className="hover:text-amber transition-colors">hello@cedarstone-cabinets.com</a>
+                <a href="mailto:info@eucalyptuswoodpallet.com" className="hover:text-amber transition-colors">info@eucalyptuswoodpallet.com</a>
               </li>
               <li className="flex items-start gap-3">
                 <svg className="w-4 h-4 mt-0.5 text-amber/60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,7 +66,7 @@ function Footer() {
         </div>
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-warm-cream/40">&copy; 2026 Cedar &amp; Stone Cabinetry. All rights reserved.</p>
+          <p className="text-xs text-warm-cream/40">&copy; 2026 Eucalyptus Wood Pallet. All rights reserved.</p>
           <p className="text-xs text-warm-cream/40">Handcrafted in Cairo, Egypt</p>
         </div>
       </div>

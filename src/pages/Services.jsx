@@ -7,176 +7,171 @@ function Services() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[65vh] min-h-[480px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/kitchen-cabinets.jpg" alt="Custom kitchen cabinetry showcase" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-charcoal/75"></div>
+          <img src="/images/services-hero.png" alt="Eucalyptus Wood Pallet products showcase" className="w-full h-full object-cover object-[8%_top] sm:object-[20%_10%] md:object-[30%_12%] lg:object-[25%_15%]" />
+          <div className="absolute inset-0 bg-charcoal/55"></div>
         </div>
         <div className="relative z-10 text-center px-6">
           <p className="reveal text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">What We Do</p>
-          <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-bold text-warm-cream tracking-tight">Custom Cabinetry for Every Room</h1>
-          <p className="reveal reveal-delay-2 mt-6 text-lg text-warm-cream/70 max-w-xl mx-auto leading-relaxed">Whether you're remodeling a kitchen, updating a bathroom, or adding storage throughout your home, we build it to fit your space and your life.</p>
+          <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-bold text-warm-cream tracking-tight">Wood Packaging Built to Perform</h1>
+          <p className="reveal reveal-delay-2 mt-6 text-lg text-warm-cream/80 max-w-xl mx-auto leading-relaxed">From pallets and crates to custom boxes, we manufacture durable wood packaging solutions for storage, transport, and export across every industry.</p>
         </div>
       </section>
 
-      {/* Kitchen Cabinets */}
+      {/* Wooden Pallets */}
       <section className="py-24 lg:py-32 bg-warm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="reveal-left">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/images/kitchen-cabinets.jpg" alt="Custom kitchen cabinetry with warm wood tones" className="w-full h-full object-cover" />
+                <img src="/images/wooden-pallets.png" alt="Eucalyptus wooden pallets for warehousing and logistics" className="w-full h-full object-cover" />
               </div>
             </div>
             <div className="reveal-right">
-              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Signature Service</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Kitchen Cabinets</h2>
+              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Signature Product</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Wooden Pallets</h2>
               <div className="mt-6 space-y-4 text-muted leading-relaxed">
-                <p>The kitchen is where most of our projects start, and for good reason. A set of well-designed custom cabinets can completely change how a kitchen feels and functions. We build base cabinets, uppers, pantry units, islands, and specialty pieces like spice racks, pull-out trash systems, and appliance garages. Every kitchen we build is designed from scratch around your layout, your appliances, and the way your family actually uses the space. No filler pieces, no compromises, just cabinetry that fits like it grew there.</p>
+                <p>Our wooden pallets are designed to deliver dependable strength, stability, and performance across storage, transport, and industrial operations. Crafted from high-quality eucalyptus wood, each pallet is built with precision to support demanding commercial environments while maintaining a clean, professional finish. Whether used in warehouses, factories, logistics centers, or export operations, our pallets provide the durability businesses need and the consistency they can trust.</p>
               </div>
               <ul className="mt-8 space-y-3">
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Custom sizing for any kitchen layout</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Pull-out organizers, lazy Susans, and spice racks</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Integrated lighting and glass door options</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Hand-applied finishes and custom stain matching</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Standard and custom pallet sizes</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Strong load-bearing construction</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Ideal for warehousing and logistics</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Clean finishing with durable assembly</li>
               </ul>
               <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                Discuss Your Kitchen
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                Discuss Your Pallets →
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Bathroom Vanities */}
+      {/* Wooden Boxes */}
       <section className="py-24 lg:py-32 bg-ivory">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="reveal-left order-2 lg:order-1">
-              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Refined Spaces</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Bathroom Vanities</h2>
+              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Premium Packaging</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Wooden Boxes</h2>
               <div className="mt-6 space-y-4 text-muted leading-relaxed">
-                <p>Bathrooms are tight on space and hard on materials, which is exactly why a custom vanity makes such a difference. We build vanities that maximize every inch of available storage while standing up to moisture and daily use. Choose from wall-mounted, freestanding, or built-in designs in any wood species and finish. We work with your plumber and tile installer to make sure everything lines up perfectly, because in a bathroom, a quarter inch matters.</p>
+                <p>Our wooden boxes are crafted to deliver reliable protection, clean presentation, and practical performance across storage, transport, and display applications. Made from high-quality eucalyptus wood, each box is designed with precision and a refined finish to support commercial, agricultural, and export needs. Whether used for product organization, packaging, or presentation, our wooden boxes combine strength, durability, and premium craftsmanship in every detail.</p>
               </div>
               <ul className="mt-8 space-y-3">
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Single and double vanity configurations</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Floating, freestanding, and built-in styles</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Moisture-resistant finishes and construction</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Matching linen towers and medicine cabinets</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Available in multiple box sizes</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Smooth finish and clean presentation</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Strong side panels and handle cutouts</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Ideal for storage, display, and transport</li>
               </ul>
               <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                Design Your Vanity
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                Design Your Boxes →
               </Link>
             </div>
             <div className="reveal-right order-1 lg:order-2">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/images/bathroom-vanity.jpg" alt="Elegant custom bathroom vanity" className="w-full h-full object-cover" />
+                <img src="/images/wooden-boxes.png" alt="Premium eucalyptus wooden boxes for storage and transport" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Built-In Shelving */}
+      {/* Wooden Crates */}
       <section className="py-24 lg:py-32 bg-warm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="reveal-left">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/images/built-ins.jpg" alt="Custom built-in shelving and storage" className="w-full h-full object-cover" />
+                <img src="/images/image10.png" alt="Eucalyptus wooden crates for export and logistics" className="w-full h-full object-cover" />
               </div>
             </div>
             <div className="reveal-right">
-              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Seamless Integration</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Built-In Shelving</h2>
+              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Export & Logistics</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Wooden Crates</h2>
               <div className="mt-6 space-y-4 text-muted leading-relaxed">
-                <p>Built-ins are one of the best investments you can make in a home. They add storage, character, and real value, all without taking up floor space. We design and build bookshelves, entertainment centers, window seats with storage, mudroom cubbies, home office built-ins, and more. Every unit is scribed to your walls and trimmed to look like original construction. If you've got a wall that isn't pulling its weight, we can fix that.</p>
+                <p>Our wooden crates are built to deliver dependable protection, structural strength, and professional presentation for storage, handling, and export operations. Crafted from high-quality eucalyptus wood, each crate is designed to support demanding commercial use while maintaining a clean, premium finish. Whether used for logistics, agricultural supply, industrial packaging, or product movement, our wooden crates provide the durability, stability, and confidence businesses need in every shipment.</p>
               </div>
               <ul className="mt-8 space-y-3">
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Home libraries and floor-to-ceiling bookshelves</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Entertainment centers and media walls</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Mudroom storage and bench seating</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Home office desks and credenzas</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Strong slatted construction for transport</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Suitable for export and warehouse use</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Built for product protection and stability</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Available in custom dimensions</li>
               </ul>
               <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                Plan Your Built-Ins
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                Plan Your Crates →
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Cabinet Refacing */}
+      {/* Custom Packaging */}
       <section className="py-24 lg:py-32 bg-ivory">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="reveal-left order-2 lg:order-1">
-              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Renew What You Have</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Cabinet Refacing</h2>
+              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Built to Your Specs</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Custom Packaging Solutions</h2>
               <div className="mt-6 space-y-4 text-muted leading-relaxed">
-                <p>If your cabinet boxes are solid but the doors and finish are showing their age, refacing is a smart alternative to a full replacement. We replace your existing doors, drawer fronts, and hardware with new custom-built components, then apply matching veneer to the cabinet frames. The result looks and feels like a brand-new kitchen at a fraction of the cost and disruption. It's a great option when the layout works but the look doesn't.</p>
+                <p>When standard sizes don't fit your product, we build to your exact specifications. Whether you need non-standard dimensions, reinforced construction for heavy loads, or packaging designed for a specific export requirement, we work with you to design and produce it. Custom orders follow the same quality standards as everything else we make — no shortcuts because the dimensions are different.</p>
               </div>
               <ul className="mt-8 space-y-3">
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>New custom doors and drawer fronts</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Updated hardware and soft-close upgrades</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Faster turnaround than full replacement</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Significantly lower cost with dramatic results</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Any dimension — width, length, and height</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Reinforced builds for heavy or fragile loads</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Export-ready construction for international shipping</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Bulk orders with consistent production quality</li>
               </ul>
               <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                Refresh Your Cabinets
+                Discuss Your Requirements
                 <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </Link>
             </div>
             <div className="reveal-right order-1 lg:order-2">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/images/wood-detail.jpg" alt="Close-up of premium wood grain and cabinet detail" className="w-full h-full object-cover" />
+                <img src="/images/wood-craftsmanship.png" alt="Custom wood packaging production" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Materials */}
+      {/* Why Eucalyptus */}
       <section className="py-24 lg:py-32 bg-charcoal text-warm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="reveal text-center max-w-2xl mx-auto mb-16 lg:mb-20">
-            <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Our Materials</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">Materials We Work With</h2>
-            <p className="mt-6 text-lg text-warm-cream/60 leading-relaxed">We source premium hardwoods from Pacific Northwest mills and select each board by hand. The species you choose sets the character of your entire project, and we're happy to help you find the right match.</p>
+            <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Our Material</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">Why We Use Eucalyptus Wood</h2>
+            <p className="mt-6 text-lg text-warm-cream/60 leading-relaxed">Not all wood performs the same under industrial conditions. Eucalyptus is our choice because it outperforms in the environments our customers actually work in.</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-            <div className="reveal reveal-delay-1 group text-center p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-300">
-              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#5C3D2E] to-[#3E2A1E] shadow-inner mb-4"></div>
-              <h4 className="text-sm font-semibold text-warm-cream">Walnut</h4>
-              <p className="text-xs text-warm-cream/40 mt-1">Rich & Warm</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="reveal reveal-delay-1 group text-center p-8 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-300">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-amber/10 mb-5">
+                <svg className="w-7 h-7 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+              </div>
+              <h4 className="text-base font-semibold text-warm-cream mb-2">High Density</h4>
+              <p className="text-sm text-warm-cream/50 leading-relaxed">Naturally dense grain gives eucalyptus exceptional load-bearing strength for pallets and crates.</p>
             </div>
-            <div className="reveal reveal-delay-1 group text-center p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-300">
-              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#C4A86B] to-[#A68B4B] shadow-inner mb-4"></div>
-              <h4 className="text-sm font-semibold text-warm-cream">White Oak</h4>
-              <p className="text-xs text-warm-cream/40 mt-1">Classic & Durable</p>
+            <div className="reveal reveal-delay-1 group text-center p-8 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-300">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-amber/10 mb-5">
+                <svg className="w-7 h-7 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+              </div>
+              <h4 className="text-base font-semibold text-warm-cream mb-2">Moisture Resistant</h4>
+              <p className="text-sm text-warm-cream/50 leading-relaxed">Holds up in humid warehouses, cold storage, and outdoor logistics environments without warping.</p>
             </div>
-            <div className="reveal reveal-delay-2 group text-center p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-300">
-              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#9B4722] to-[#7A3518] shadow-inner mb-4"></div>
-              <h4 className="text-sm font-semibold text-warm-cream">Cherry</h4>
-              <p className="text-xs text-warm-cream/40 mt-1">Elegant & Refined</p>
+            <div className="reveal reveal-delay-2 group text-center p-8 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-300">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-amber/10 mb-5">
+                <svg className="w-7 h-7 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              </div>
+              <h4 className="text-base font-semibold text-warm-cream mb-2">Durable Under Pressure</h4>
+              <p className="text-sm text-warm-cream/50 leading-relaxed">Resists cracking and splitting under heavy loads — critical for export and multi-stack warehouse storage.</p>
             </div>
-            <div className="reveal reveal-delay-2 group text-center p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-300">
-              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#E8D5B0] to-[#C9B48E] shadow-inner mb-4"></div>
-              <h4 className="text-sm font-semibold text-warm-cream">Maple</h4>
-              <p className="text-xs text-warm-cream/40 mt-1">Light & Clean</p>
-            </div>
-            <div className="reveal reveal-delay-3 group text-center p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-300">
-              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#B8936A] to-[#96744D] shadow-inner mb-4"></div>
-              <h4 className="text-sm font-semibold text-warm-cream">Alder</h4>
-              <p className="text-xs text-warm-cream/40 mt-1">Versatile & Soft</p>
-            </div>
-            <div className="reveal reveal-delay-3 group text-center p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-300">
-              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#C4883A] to-[#A06D2A] shadow-inner mb-4"></div>
-              <h4 className="text-sm font-semibold text-warm-cream">Douglas Fir</h4>
-              <p className="text-xs text-warm-cream/40 mt-1">PNW Heritage</p>
+            <div className="reveal reveal-delay-3 group text-center p-8 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-300">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-amber/10 mb-5">
+                <svg className="w-7 h-7 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+              </div>
+              <h4 className="text-base font-semibold text-warm-cream mb-2">Clean Finish</h4>
+              <p className="text-sm text-warm-cream/50 leading-relaxed">Machines and sands to a smooth, consistent surface — so your packaging looks as professional as your product.</p>
             </div>
           </div>
         </div>
@@ -188,7 +183,7 @@ function Services() {
           <div className="reveal">
             <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-6">Start Your Project</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-tight">Let's Build Something Together</h2>
-            <p className="mt-6 text-lg text-muted leading-relaxed max-w-2xl mx-auto">Have a project in mind? We'd love to hear about it. Reach out for a free in-home consultation and let's talk about what's possible.</p>
+            <p className="mt-6 text-lg text-muted leading-relaxed max-w-2xl mx-auto">Have an order in mind? Reach out and we'll walk you through options, pricing, and lead times. No commitment required.</p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link to="/contact" className="inline-flex items-center px-8 py-4 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                 Request a Free Consultation
