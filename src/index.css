@@ -76,12 +76,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Arabic font support */
 [lang="ar"] body {
-  font-family: 'Noto Sans Arabic', 'DM Sans', sans-serif;
+  font-family: 'Readex Pro', 'DM Sans', sans-serif;
 }
 
 [lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3,
 [lang="ar"] h4, [lang="ar"] h5, [lang="ar"] h6 {
-  font-family: 'Noto Sans Arabic', 'Playfair Display', serif;
+  font-family: 'Readex Pro', 'DM Sans', sans-serif;
 }
 
 /* RTL reveal animation direction overrides */

@@ -24,3 +24,14 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Screenshots / dev artifacts
+*.png
+*.jpg
+*.jpeg
+
+# Dev tooling
+.agents/
+.playwright-mcp/
+skills-lock.json
+i18n-plan-and-prompt.md

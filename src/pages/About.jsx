@@ -47,6 +47,7 @@ function About() {
               <div className="mt-8 space-y-6 text-muted leading-relaxed">
                 <p>{t('about.story.body1')}</p>
                 <p>{t('about.story.body2')}</p>
+                {t('about.story.body3') && <p>{t('about.story.body3')}</p>}
               </div>
             </div>
           </div>

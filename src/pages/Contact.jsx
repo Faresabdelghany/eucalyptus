@@ -23,14 +23,53 @@ function Contact() {
   });
 
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
+  const [fieldErrors, setFieldErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear field error when user starts typing
+    if (fieldErrors[name]) {
+      setFieldErrors((prev) => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  // Client-side validation
+  const validateForm = () => {
+    const errors = {};
+
+    if (!formData.name.trim()) {
+      errors.name = t('contact.form.validation.nameRequired') || 'Name is required';
+    }
+
+    if (!formData.email.trim()) {
+      errors.email = t('contact.form.validation.emailRequired') || 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      errors.email = t('contact.form.validation.emailInvalid') || 'Please enter a valid email address';
+    }
+
+    if (formData.phone && !/^[\d\s()+-]{7,20}$/.test(formData.phone)) {
+      errors.phone = t('contact.form.validation.phoneInvalid') || 'Please enter a valid phone number';
+    }
+
+    if (!formData.message.trim()) {
+      errors.message = t('contact.form.validation.messageRequired') || 'Message is required';
+    }
+
+    return errors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Client-side validation first
+    const errors = validateForm();
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      return;
+    }
+
+    setFieldErrors({});
     setStatus('submitting');
 
     try {
@@ -44,6 +83,12 @@ function Contact() {
 
       if (response.ok && data.success) {
         setStatus('success');
+        // Reset form after successful submission
+        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+      } else if (data.errors) {
+        // Show server-side field errors
+        setFieldErrors(data.errors);
+        setStatus('idle');
       } else {
         setStatus('error');
       }
@@ -81,19 +126,22 @@ function Contact() {
               <div className="bg-ivory rounded-2xl p-8 md:p-10 shadow-sm border border-charcoal/5">
                 <h2 className="text-2xl md:text-3xl font-bold font-[Playfair_Display] text-charcoal mb-2">{t('contact.form.heading')}</h2>
                 <p className="text-muted mb-8">{t('contact.form.subheading')}</p>
-                <form id="contact-form" className="space-y-6" onSubmit={handleSubmit}>
+                <form id="contact-form" className="space-y-6" noValidate onSubmit={handleSubmit}>
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-charcoal mb-2">{t('contact.form.nameLabel')} <span className="text-amber">*</span></label>
-                    <input type="text" id="name" name="name" required placeholder={t('contact.form.namePlaceholder')} value={formData.name} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-charcoal/15 bg-warm-cream/50 text-charcoal placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors" />
+                    <input type="text" id="name" name="name" required placeholder={t('contact.form.namePlaceholder')} value={formData.name} onChange={handleChange} className={`w-full px-4 py-3 rounded-lg border ${fieldErrors.name ? 'border-red-400 ring-2 ring-red-200' : 'border-charcoal/15'} bg-warm-cream/50 text-charcoal placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors`} />
+                    {fieldErrors.name && <p className="mt-1 text-sm text-red-600">{fieldErrors.name}</p>}
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-charcoal mb-2">{t('contact.form.emailLabel')} <span className="text-amber">*</span></label>
-                      <input type="email" id="email" name="email" required placeholder={t('contact.form.emailPlaceholder')} value={formData.email} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-charcoal/15 bg-warm-cream/50 text-charcoal placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors" />
+                      <input type="email" id="email" name="email" required placeholder={t('contact.form.emailPlaceholder')} value={formData.email} onChange={handleChange} className={`w-full px-4 py-3 rounded-lg border ${fieldErrors.email ? 'border-red-400 ring-2 ring-red-200' : 'border-charcoal/15'} bg-warm-cream/50 text-charcoal placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors`} />
+                      {fieldErrors.email && <p className="mt-1 text-sm text-red-600">{fieldErrors.email}</p>}
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-charcoal mb-2">{t('contact.form.phoneLabel')}</label>
-                      <input type="tel" id="phone" name="phone" placeholder={t('contact.form.phonePlaceholder')} value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-charcoal/15 bg-warm-cream/50 text-charcoal placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors" />
+                      <input type="tel" id="phone" name="phone" placeholder={t('contact.form.phonePlaceholder')} value={formData.phone} onChange={handleChange} className={`w-full px-4 py-3 rounded-lg border ${fieldErrors.phone ? 'border-red-400 ring-2 ring-red-200' : 'border-charcoal/15'} bg-warm-cream/50 text-charcoal placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors`} />
+                      {fieldErrors.phone && <p className="mt-1 text-sm text-red-600">{fieldErrors.phone}</p>}
                     </div>
                   </div>
                   <div>
@@ -109,9 +157,18 @@ function Contact() {
                   </div>
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-charcoal mb-2">{t('contact.form.messageLabel')} <span className="text-amber">*</span></label>
-                    <textarea id="message" name="message" rows="5" required placeholder={t('contact.form.messagePlaceholder')} value={formData.message} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-charcoal/15 bg-warm-cream/50 text-charcoal placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors resize-vertical"></textarea>
+                    <textarea id="message" name="message" rows="5" required maxLength={2000} placeholder={t('contact.form.messagePlaceholder')} value={formData.message} onChange={handleChange} className={`w-full px-4 py-3 rounded-lg border ${fieldErrors.message ? 'border-red-400 ring-2 ring-red-200' : 'border-charcoal/15'} bg-warm-cream/50 text-charcoal placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors resize-vertical`}></textarea>
+                    {fieldErrors.message && <p className="mt-1 text-sm text-red-600">{fieldErrors.message}</p>}
                   </div>
-                  <button type="submit" className="w-full md:w-auto inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-charcoal bg-amber rounded-lg hover:bg-amber/90 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer">{t('contact.form.submitButton')}</button>
+                  <button type="submit" disabled={status === 'submitting'} className={`w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-semibold text-charcoal bg-amber rounded-lg transition-all duration-200 shadow-md ${status === 'submitting' ? 'opacity-60 cursor-not-allowed' : 'hover:bg-amber/90 hover:shadow-lg hover:-translate-y-0.5 cursor-pointer'}`}>
+                    {status === 'submitting' && (
+                      <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                    )}
+                    {status === 'submitting' ? (t('contact.form.submittingButton') || 'Sending...') : t('contact.form.submitButton')}
+                  </button>
                   {status === 'success' && (
                     <div id="form-success" className="p-4 rounded-lg bg-sage/20 border border-sage/30 text-charcoal">
                       <p className="font-medium">{t('contact.form.success.heading')}</p>
@@ -135,7 +192,7 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-charcoal">{t('contact.info.phoneLabel')}</h3>
-                  <a href="tel:+20225168243" className="text-muted hover:text-amber transition-colors">(02) 2516-8243</a>
+                  <a href="tel:+201050058837" className="text-muted hover:text-amber transition-colors">0105 005 8837</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -144,7 +201,7 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-charcoal">{t('contact.info.emailLabel')}</h3>
-                  <a href="mailto:info@eucalyptuswoodpallet.com" className="text-muted hover:text-amber transition-colors">info@eucalyptuswoodpallet.com</a>
+                  <a href="mailto:info@eucalyptus-woodpallet.com" className="text-muted hover:text-amber transition-colors">info@eucalyptus-woodpallet.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -153,7 +210,7 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-charcoal">{t('contact.info.addressLabel')}</h3>
-                  <p className="text-muted whitespace-pre-line">{t('contact.info.addressValue')}</p>
+                  <a href="https://maps.app.goo.gl/Ky8PddERhWidNv9y7" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-amber transition-colors whitespace-pre-line">{t('contact.info.addressValue')}</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -183,7 +240,7 @@ function Contact() {
             <p className="mt-3 text-muted max-w-xl mx-auto">{t('contact.map.body')}</p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg border border-charcoal/5 reveal reveal-delay-1">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.2!2d31.2579!3d29.9602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDU3JzM2LjciTiAzMcKwMTUnMjguNCJF!5e0!3m2!1sen!2seg!4v1700000000000" width="100%" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Eucalyptus Wood Pallet workshop location in Maadi, Cairo"></iframe>
+            <iframe src="https://www.google.com/maps?q=30.5677778,30.7146944&z=17&output=embed" width="100%" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Eucalyptus Wood Pallet workshop location"></iframe>
           </div>
         </div>
       </section>

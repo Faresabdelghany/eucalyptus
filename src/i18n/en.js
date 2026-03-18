@@ -32,7 +32,7 @@ const en = {
         "Eucalyptus Wood Pallet manufactures wooden pallets, boxes, and crates for factories, warehouses, and exporters across Egypt. 20+ years experience. Cairo-based. Request a free quote.",
     },
     hero: {
-      eyebrow: "Cairo's Wood Packaging Manufacturer",
+      eyebrow: "Wood Packaging Manufacturer",
       headline: "Pallets, Boxes & Crates Built to Last",
       body: "For over 20 years, we've manufactured wooden pallets, boxes, and crates for factories, warehouses, and exporters across Egypt. No shortcuts. No compromise. Just dependable wood packaging built around your operation.",
       ctaPrimary: "Start Your Project",
@@ -82,7 +82,7 @@ const en = {
       heading: "Ready to Place Your Order?",
       body: "Tell us what you need — dimensions, quantities, intended use — and we'll take it from there. No pressure, no sales pitch, just straightforward advice from people who know wood packaging.",
       ctaPrimary: "Request a Free Quote",
-      ctaPhone: "(02) 2516-8243",
+      ctaPhone: "0105 005 8837",
     },
   },
 
@@ -103,6 +103,7 @@ const en = {
       heading: "Our Story",
       body1: "Eucalyptus Wood Pallet started with a simple belief: wood packaging should be built to actually work — not just look the part. For over 20 years, we've manufactured pallets, boxes, and crates for factories, warehouses, agricultural businesses, and exporters across Egypt. Every product leaves our Cairo workshop built to handle the demands of real operations.",
       body2: "We've grown by earning the trust of businesses who need packaging they can rely on, order after order. We don't cut corners on materials, construction, or finishing. When your product is in one of our crates heading to a customer, it should arrive in exactly the condition it left.",
+      body3: "",
     },
     values: {
       eyebrow: "What Guides Us",
@@ -227,7 +228,7 @@ const en = {
       heading: "Ready to Place Your Order?",
       body: "Have an order in mind? Reach out and we'll walk you through options, pricing, and lead times. No commitment required.",
       ctaPrimary: "Request a Free Quote",
-      ctaPhone: "(02) 2516-8243",
+      ctaPhone: "0105 005 8837",
     },
   },
 
@@ -235,14 +236,14 @@ const en = {
     meta: {
       title: "Contact Us | Request a Quote | Eucalyptus Wood Pallet Cairo",
       description:
-        "Contact Eucalyptus Wood Pallet in Cairo, Egypt. Request a free quote for wooden pallets, boxes, crates, or custom packaging. Call (02) 2516-8243 or fill out our form.",
+        "Contact Eucalyptus Wood Pallet in Cairo, Egypt. Request a free quote for wooden pallets, boxes, crates, or custom packaging. Call 0105 005 8837 or fill out our form.",
     },
     hero: {
-      heading: "Request a Quote in Cairo",
-      body: "Tell us what you need — product type, dimensions, quantities — and we'll get back to you with pricing and lead times within one business day.",
+      heading: "Request a Quote",
+      body: "Tell us what you need: product type, dimensions, and quantities. We'll get back to you with pricing and lead times within one business day.",
     },
     intro:
-      "Drop us a line, give us a call, or visit our workshop in Maadi. Whether you have a standing order or a one-off requirement, we're happy to discuss what you need.",
+      "Drop us a line, give us a call, or visit our workshop. Whether you have a standing order or a one-off requirement, we're happy to discuss what you need.",
     form: {
       heading: "Send Us a Message",
       subheading:
@@ -266,13 +267,21 @@ const en = {
       messagePlaceholder:
         "Tell us what you need — product type, dimensions, quantities, intended use, and any specific requirements.",
       submitButton: "Send Message",
+      submittingButton: "Sending...",
+      validation: {
+        nameRequired: "Name is required",
+        emailRequired: "Email is required",
+        emailInvalid: "Please enter a valid email address",
+        phoneInvalid: "Please enter a valid phone number",
+        messageRequired: "Message is required",
+      },
       success: {
         heading: "Message Received!",
-        body: "Thanks for reaching out. We typically respond within one business day with pricing and lead times. For urgent orders, call us directly at (02) 2516-8243.",
+        body: "Thanks for reaching out. We typically respond within one business day with pricing and lead times. For urgent orders, call us directly at 0105 005 8837.",
       },
       error: {
         heading: "Something Went Wrong",
-        body: "We weren't able to send your message. Please try again, or contact us directly at (02) 2516-8243 or info@eucalyptuswoodpallet.com.",
+        body: "We weren't able to send your message. Please try again, or contact us directly at 0105 005 8837 or info@eucalyptuswoodpallet.com.",
       },
     },
     info: {
@@ -285,7 +294,7 @@ const en = {
         "Monday - Friday: 8:00am - 5:00pm\nSaturday: 9:00am - 2:00pm\nSunday: Closed",
       freeQuote: {
         heading: "Free Quotes, No Commitment",
-        body: "Tell us your product type, dimensions, and quantities and we'll provide a detailed quote at no charge. You can also visit our workshop in Maadi to discuss requirements in person.",
+        body: "Tell us your product type, dimensions, and quantities and we'll provide a detailed quote at no charge. You can also visit our workshop to discuss requirements in person.",
       },
     },
     map: {

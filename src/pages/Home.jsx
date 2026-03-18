@@ -23,8 +23,8 @@ function Home() {
           "name": "Eucalyptus Wood Pallet",
           "description": "Wood packaging manufacturer producing wooden pallets, boxes, and crates for factories, warehouses, and exporters across Egypt.",
           "url": "https://eucalyptuswoodpallet.com",
-          "telephone": "+20225168243",
-          "email": "info@eucalyptuswoodpallet.com",
+          "telephone": "+201050058837",
+          "email": "info@eucalyptus-woodpallet.com",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "27 Road 9, Maadi",
@@ -180,7 +180,7 @@ function Home() {
                 {t('home.cta.ctaPrimary')}
                 <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </Link>
-              <a href="tel:+20225168243" className="inline-flex items-center px-8 py-4 text-sm font-semibold text-warm-cream border border-warm-cream/30 rounded-md hover:border-amber hover:text-amber transition-all duration-300">
+              <a href="tel:+201050058837" className="inline-flex items-center px-8 py-4 text-sm font-semibold text-warm-cream border border-warm-cream/30 rounded-md hover:border-amber hover:text-amber transition-all duration-300">
                 <svg className="me-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                 {t('home.cta.ctaPhone')}
               </a>
