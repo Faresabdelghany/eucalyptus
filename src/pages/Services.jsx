@@ -54,6 +54,7 @@ function Services() {
               </ul>
               <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
                 {t('services.pallets.cta')}
+                <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </Link>
             </div>
           </div>
@@ -78,6 +79,7 @@ function Services() {
               </ul>
               <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
                 {t('services.boxes.cta')}
+                <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </Link>
             </div>
             <div className="reveal-right order-1 lg:order-2">
@@ -112,6 +114,7 @@ function Services() {
               </ul>
               <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
                 {t('services.crates.cta')}
+                <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </Link>
             </div>
           </div>
