@@ -19,7 +19,7 @@ Add Arabic/English language switching to the existing React + Vite + Tailwind v4
 |------|---------|
 | `src/i18n/en.js` | All English strings as a nested object |
 | `src/i18n/ar.js` | Arabic translations with identical structure |
-| `src/i18n/index.js` | Exports both translation objects and `t(lang, key)` helper |
+| `src/i18n/index.js` | Exports both translation objects and low-level `t(lang, key)` helper |
 | `src/context/LanguageContext.jsx` | React context provider + `useLanguage()` hook |
 
 ### Modified files
@@ -28,38 +28,86 @@ Add Arabic/English language switching to the existing React + Vite + Tailwind v4
 |------|--------|
 | `index.html` | Add Noto Sans Arabic font link + inline flash-prevention script |
 | `src/main.jsx` | Wrap `<App />` with `<LanguageProvider>` |
-| `src/index.css` | Add Arabic font rules under `[lang="ar"]` |
-| `src/components/Navbar.jsx` | Add language toggle button, replace hardcoded text |
-| `src/components/Footer.jsx` | Replace hardcoded text |
+| `src/index.css` | Add Arabic font rules under `[lang="ar"]`; add `[dir="rtl"]` reveal-animation overrides |
+| `src/components/Navbar.jsx` | Add language toggle button, replace hardcoded text, fix directional classes |
+| `src/components/Footer.jsx` | Replace hardcoded text, fix directional classes |
 | `src/pages/Home.jsx` | Replace hardcoded text, fix directional classes |
 | `src/pages/About.jsx` | Replace hardcoded text, fix directional classes |
 | `src/pages/Services.jsx` | Replace hardcoded text, fix directional classes |
-| `src/pages/Contact.jsx` | Replace hardcoded text incl. form labels/placeholders/messages |
+| `src/pages/Contact.jsx` | Replace hardcoded text incl. form labels/placeholders/messages; fix select chevron RTL |
 
 ---
 
 ## Data Flow
 
-```
-LanguageProvider
-  ├── reads localStorage('lang') on init, defaults to 'en'
-  ├── sets document.documentElement.lang and .dir on mount and on change
-  ├── persists lang to localStorage on change
-  └── provides { lang, setLang, t } via React context
+The `src/i18n/index.js` module exports a two-argument helper:
 
-useLanguage() hook
-  └── consumed by Navbar, Footer, Home, About, Services, Contact
+```js
+// src/i18n/index.js
+import en from './en.js';
+import ar from './ar.js';
 
-t(key)
-  └── dot-notation lookup into the active translation object
-      e.g. t('home.hero.headline') → translations[lang].home.hero.headline
+const translations = { en, ar };
+
+// Low-level helper — used internally by the context
+export function t(lang, key) {
+  const keys = key.split('.');
+  let value = translations[lang] ?? translations['en'];
+  for (const k of keys) {
+    value = value?.[k];
+  }
+  // Fallback chain: requested lang → English → key string
+  if (value !== undefined) return value;
+  let fallback = translations['en'];
+  for (const k of keys) { fallback = fallback?.[k]; }
+  return fallback ?? key;
+}
+
+export { translations };
 ```
+
+`LanguageContext.jsx` wraps `t(lang, key)` into a bound one-argument closure `t(key)`:
+
+```js
+// Inside LanguageProvider
+const tBound = (key) => t(lang, key);
+// Provided as: { lang, setLang, t: tBound }
+```
+
+All components call `const { lang, setLang, t } = useLanguage()` and then use `t('some.key')` — one argument, no lang threading.
+
+### LanguageProvider initialization
+
+```js
+function LanguageProvider({ children }) {
+  const [lang, setLangState] = useState(
+    () => localStorage.getItem('lang') || 'en'
+  );
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    localStorage.setItem('lang', lang);
+  }, [lang]);
+
+  const setLang = (newLang) => setLangState(newLang);
+  const tBound = (key) => t(lang, key);
+
+  return (
+    <LanguageContext.Provider value={{ lang, setLang, t: tBound }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+}
+```
+
+The `useEffect` with `[lang]` dependency fires on mount (confirming/matching what the flash-prevention script already set) and on every subsequent language change. No race condition or double-set issue — the flash-prevention script handles pre-React rendering, the effect handles React-managed updates.
 
 ---
 
 ## Flash Prevention
 
-An inline `<script>` placed in `<head>` (before the main bundle) reads `localStorage.getItem('lang')` and immediately sets `document.documentElement.dir` and `document.documentElement.lang`. This fires synchronously during HTML parsing, before React mounts, eliminating any LTR→RTL layout shift.
+An inline `<script>` placed in `<head>` (before any other scripts, after font links) reads `localStorage.getItem('lang')` and immediately sets `document.documentElement.dir` and `document.documentElement.lang`. This fires synchronously during HTML parsing, before React mounts, eliminating any LTR→RTL layout shift.
 
 ```html
 <script>
@@ -169,13 +217,38 @@ An inline `<script>` placed in `<head>` (before the main bundle) reads `localSto
 
 **Business details that stay in English:** name "Eucalyptus Wood Pallet", address "27 Road 9, Maadi / Cairo, Egypt 11728", phone "(02) 2516-8243", email "info@eucalyptuswoodpallet.com". All surrounding labels are translated.
 
+### Multi-line translation values
+
+`contact.info.addressValue` and `contact.info.hoursValue` contain multi-line content. Both are stored as plain strings using `\n` as the line separator:
+
+```js
+// en.js
+hoursValue: "Monday - Friday: 8:00am - 5:00pm\nSaturday: 9:00am - 2:00pm\nSunday: Closed"
+```
+
+In JSX, render them by splitting on `\n` and inserting `<br/>`:
+
+```jsx
+{t('contact.info.hoursValue').split('\n').map((line, i, arr) => (
+  <span key={i}>{line}{i < arr.length - 1 && <br/>}</span>
+))}
+```
+
+Or equivalently: apply `whitespace-pre-line` CSS class and render the string directly inside a `<p>`.
+
 ---
 
 ## RTL / CSS Strategy
 
 ### Arabic font
 
-Added to `index.html` font link and to `index.css`:
+Added to `index.html` alongside the existing Google Fonts link:
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+```
+
+Added to `index.css`:
 
 ```css
 [lang="ar"] body {
@@ -190,7 +263,7 @@ Added to `index.html` font link and to `index.css`:
 
 ### Tailwind logical property replacements
 
-All directional Tailwind classes replaced with logical equivalents across all JSX files:
+All **intentionally directional** Tailwind classes replaced with logical equivalents across all JSX files:
 
 | Physical | Logical |
 |---------|---------|
@@ -198,24 +271,64 @@ All directional Tailwind classes replaced with logical equivalents across all JS
 | `mr-*` | `me-*` |
 | `pl-*` | `ps-*` |
 | `pr-*` | `pe-*` |
-| `left-*` | `start-*` |
-| `right-*` | `end-*` |
+| `left-*` (positional, not structural) | `start-*` |
+| `right-*` (positional, not structural) | `end-*` |
 | `text-left` | `text-start` |
 | `text-right` | `text-end` |
 
+**Intentional exceptions (do not replace):**
+
+- `left-0 right-0` on the `<nav>` element in Navbar.jsx — these are structural full-width positioning values, correct for both directions. Leave as-is.
+- `left-1/2 -translate-x-1/2` on the scroll indicator in Home.jsx — horizontal centering, direction-neutral. Leave as-is.
+- `-left-6`, `-right-6`, `-top-6` on decorative background accent boxes in About.jsx/Home.jsx — these are purely decorative and intentionally asymmetric. Leave as-is.
+
+All other `ml-*`, `mr-*`, `pl-*`, `pr-*` occurrences in Navbar (logo `ml-8` → `ms-8`, "Get a Quote" desktop `ml-4` → `ms-4`), Footer, and all pages are replaced.
+
 ### Arrow SVGs
 
-CTA buttons with `→` arrow SVGs gain `rtl:rotate-180` class to flip direction in Arabic.
+CTA buttons with `→` arrow SVGs (those using `ml-2` or `mr-2`) gain `rtl:rotate-180` class to flip direction in Arabic. **Important:** `rtl:rotate-180` must appear as a literal string in JSX (not constructed dynamically) so Tailwind's source scanner registers it.
 
 ### Hero gradient
 
 ```jsx
-className="... bg-gradient-to-r rtl:bg-gradient-to-l ..."
+className="absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-charcoal/90 via-charcoal/70 to-charcoal/40"
 ```
+
+`rtl:bg-gradient-to-l` must appear as a literal string in JSX (not built dynamically).
 
 ### Reveal animations
 
-`reveal-left` and `reveal-right` CSS classes in `index.css` gain `[dir="rtl"]` overrides to swap initial `translateX` direction so content animates in from the correct side.
+`index.css` gains `[dir="rtl"]` overrides so reveal animations come from the correct side:
+
+```css
+[dir="rtl"] .reveal-left {
+  transform: translateX(48px);
+}
+
+[dir="rtl"] .reveal-right {
+  transform: translateX(-48px);
+}
+
+[dir="rtl"] .reveal-left.visible,
+[dir="rtl"] .reveal-right.visible {
+  transform: translateX(0);
+}
+```
+
+### Contact form select chevron (RTL fix)
+
+The `selectChevronStyle` inline object in Contact.jsx uses `backgroundPosition: 'right 12px center'`. In RTL this should be `left 12px center`. Fix by making it direction-aware:
+
+```jsx
+const selectChevronStyle = {
+  backgroundImage: "url('...')",
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: lang === 'ar' ? 'left 12px center' : 'right 12px center',
+  backgroundSize: '20px',
+};
+```
+
+This requires `lang` to be in scope — the Contact component must call `useLanguage()` and destructure `lang` (it already destructures `t` so this is a minor addition).
 
 ---
 
@@ -234,13 +347,21 @@ className="... bg-gradient-to-r rtl:bg-gradient-to-l ..."
 
 ### Mobile (first item in mobile menu)
 
-Same button logic, displayed as the first child in the mobile menu `div`, styled to match the mobile nav link pattern.
+Same button logic, displayed as the first child in the mobile menu `div`, styled to match the mobile nav link pattern (full-width, `px-4 py-3`).
 
 ---
 
 ## Navbar navLinks
 
-The static `navLinks` array defined outside the component is removed. Nav link labels are replaced with `t()` calls inline (or array rebuilt inside the component from translated keys).
+The static `navLinks` array defined outside the component is removed. Inside the component, after calling `useLanguage()`, construct the array from `t()` calls:
+
+```js
+const navLinks = [
+  { to: '/', label: t('nav.home') },
+  { to: '/about', label: t('nav.about') },
+  { to: '/services', label: t('nav.services') },
+];
+```
 
 ---
 
@@ -250,4 +371,4 @@ The static `navLinks` array defined outside the component is removed. Nav link l
 - No i18n library installed
 - No changes to routing logic or URL structure per language
 - No changes to the `useScrollReveal` hook
-- Schema.org JSON-LD in Home.jsx meta stays in English (it's structured data for search engines)
+- Schema.org JSON-LD in Home.jsx meta stays in English (structured data for search engines)
