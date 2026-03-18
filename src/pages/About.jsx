@@ -13,8 +13,8 @@ function About() {
         <title>{t('about.meta.title')}</title>
         <meta name="description" content={t('about.meta.description')} />
         <link rel="canonical" href="https://eucalyptuswoodpallet.com/about" />
-        <meta property="og:title" content="About Us | Wood Packaging Manufacturer in Cairo" />
-        <meta property="og:description" content="20+ years manufacturing wooden pallets, boxes, and crates in Cairo, Egypt. Built around quality eucalyptus wood and dependable supply." />
+        <meta property="og:title" content={t('about.meta.title')} />
+        <meta property="og:description" content={t('about.meta.description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://eucalyptuswoodpallet.com/about" />
       </Helmet>

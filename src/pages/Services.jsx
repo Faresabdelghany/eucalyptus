@@ -13,8 +13,8 @@ function Services() {
         <title>{t('services.meta.title')}</title>
         <meta name="description" content={t('services.meta.description')} />
         <link rel="canonical" href="https://eucalyptuswoodpallet.com/services" />
-        <meta property="og:title" content="Wooden Pallets, Boxes, Crates & Custom Packaging | Cairo, Egypt" />
-        <meta property="og:description" content="Eucalyptus wood pallets, boxes, crates, and custom packaging for industrial and export use. Manufactured in Cairo, Egypt." />
+        <meta property="og:title" content={t('services.meta.title')} />
+        <meta property="og:description" content={t('services.meta.description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://eucalyptuswoodpallet.com/services" />
       </Helmet>

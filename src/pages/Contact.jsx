@@ -58,8 +58,8 @@ function Contact() {
         <title>{t('contact.meta.title')}</title>
         <meta name="description" content={t('contact.meta.description')} />
         <link rel="canonical" href="https://eucalyptuswoodpallet.com/contact" />
-        <meta property="og:title" content="Contact Us | Request a Quote | Eucalyptus Wood Pallet" />
-        <meta property="og:description" content="Get in touch with our team in Cairo to request a quote for wooden pallets, boxes, crates, or custom packaging solutions." />
+        <meta property="og:title" content={t('contact.meta.title')} />
+        <meta property="og:description" content={t('contact.meta.description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://eucalyptuswoodpallet.com/contact" />
       </Helmet>
@@ -153,7 +153,7 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-charcoal">{t('contact.info.addressLabel')}</h3>
-                  <p className="text-muted">27 Road 9, Maadi<br/>Cairo, Egypt 11728</p>
+                  <p className="text-muted whitespace-pre-line">{"27 Road 9, Maadi\nCairo, Egypt 11728"}</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">

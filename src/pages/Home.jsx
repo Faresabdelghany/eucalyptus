@@ -13,8 +13,8 @@ function Home() {
         <title>{t('home.meta.title')}</title>
         <meta name="description" content={t('home.meta.description')} />
         <link rel="canonical" href="https://eucalyptuswoodpallet.com/" />
-        <meta property="og:title" content="Wooden Pallets, Boxes & Crates Manufacturer | Cairo, Egypt" />
-        <meta property="og:description" content="Eucalyptus Wood Pallet manufactures wooden pallets, boxes, and crates for factories, warehouses, and exporters across Egypt. 20+ years experience. Request a free quote." />
+        <meta property="og:title" content={t('home.meta.title')} />
+        <meta property="og:description" content={t('home.meta.description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://eucalyptuswoodpallet.com/" />
         <script type="application/ld+json">{JSON.stringify({
