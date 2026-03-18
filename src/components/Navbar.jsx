@@ -60,6 +60,7 @@ function Navbar() {
             ))}
             <button
               onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
+              aria-label={lang === 'en' ? 'Switch to Arabic' : 'Switch to English'}
               className="me-2 px-3 py-1 text-sm rounded-full border border-warm-cream/30 text-warm-cream/80 hover:text-amber hover:border-amber transition-colors"
             >
               {lang === 'en' ? 'عربي' : 'EN'}
@@ -103,6 +104,7 @@ function Navbar() {
         <div className="px-6 py-4 space-y-1 bg-charcoal/95 backdrop-blur-md">
           <button
             onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
+            aria-label={lang === 'en' ? 'Switch to Arabic' : 'Switch to English'}
             className="block w-full text-start px-4 py-3 text-sm font-medium rounded-md text-warm-cream/80 hover:text-amber hover:bg-white/5 transition-colors"
           >
             {lang === 'en' ? 'عربي' : 'EN'}
