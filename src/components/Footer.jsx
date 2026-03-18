@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext.jsx';
 
 function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-charcoal text-warm-cream/80">
       <div className="w-full h-px bg-gradient-to-r from-transparent via-amber/40 to-transparent"></div>
@@ -15,32 +17,32 @@ function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-warm-cream/60 max-w-xs">
-              Premium eucalyptus wood pallets, crafted in Cairo, Egypt. Serving local and international markets with quality and precision.
+              {t('footer.tagline')}
             </p>
           </div>
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-amber mb-6">Navigate</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-amber mb-6">{t('footer.navigate')}</h4>
             <ul className="space-y-3">
-              <li><Link to="/" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Home</Link></li>
-              <li><Link to="/about" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">About Us</Link></li>
-              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Services</Link></li>
-              <li><Link to="/contact" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Contact</Link></li>
+              <li><Link to="/" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.home')}</Link></li>
+              <li><Link to="/about" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.aboutUs')}</Link></li>
+              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.services')}</Link></li>
+              <li><Link to="/contact" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.contact')}</Link></li>
             </ul>
           </div>
           {/* Services */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-amber mb-6">Services</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-amber mb-6">{t('footer.servicesHeading')}</h4>
             <ul className="space-y-3">
-              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Wooden Pallets</Link></li>
-              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Wooden Boxes</Link></li>
-              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Wooden Crates</Link></li>
-              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">Custom Packaging</Link></li>
+              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.woodenPallets')}</Link></li>
+              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.woodenBoxes')}</Link></li>
+              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.woodenCrates')}</Link></li>
+              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.customPackaging')}</Link></li>
             </ul>
           </div>
           {/* Contact Info */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-amber mb-6">Get in Touch</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-amber mb-6">{t('footer.getInTouch')}</h4>
             <ul className="space-y-3 text-sm text-warm-cream/60">
               <li className="flex items-start gap-3">
                 <svg className="w-4 h-4 mt-0.5 text-amber/60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,8 +68,8 @@ function Footer() {
         </div>
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-warm-cream/40">&copy; 2026 Eucalyptus Wood Pallet. All rights reserved.</p>
-          <p className="text-xs text-warm-cream/40">Handcrafted in Cairo, Egypt</p>
+          <p className="text-xs text-warm-cream/40">{t('footer.copyright')}</p>
+          <p className="text-xs text-warm-cream/40">{t('footer.handcrafted')}</p>
         </div>
       </div>
     </footer>
