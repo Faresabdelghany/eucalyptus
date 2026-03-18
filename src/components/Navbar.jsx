@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-
-const navLinks = [
-  { to: '/', label: 'Home' },
-  { to: '/about', label: 'About' },
-  { to: '/services', label: 'Services' },
-];
+import { useLanguage } from '../context/LanguageContext.jsx';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { lang, setLang, t } = useLanguage();
+
+  const navLinks = [
+    { to: '/', label: t('nav.home') },
+    { to: '/about', label: t('nav.about') },
+    { to: '/services', label: t('nav.services') },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +36,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo / Brand */}
-          <Link to="/" className="flex items-center gap-2 group ml-8">
+          <Link to="/" className="flex items-center gap-2 group ms-8">
             <img src="/images/logo.png?v=2" alt="Eucalyptus Wood Pallet" className="h-[4.5rem] w-auto block flex-shrink-0" />
             <span className="hidden sm:inline text-2xl font-extrabold text-warm-cream tracking-tight font-[Playfair_Display] leading-tight">
               Eucalyptus <span className="text-amber">Wood</span> Pallet
@@ -56,11 +58,17 @@ function Navbar() {
                 {label}
               </Link>
             ))}
+            <button
+              onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
+              className="me-2 px-3 py-1 text-sm rounded-full border border-warm-cream/30 text-warm-cream/80 hover:text-amber hover:border-amber transition-colors"
+            >
+              {lang === 'en' ? 'عربي' : 'EN'}
+            </button>
             <Link
               to="/contact"
-              className="ml-4 inline-flex items-center px-5 py-2.5 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              className="ms-4 inline-flex items-center px-5 py-2.5 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
             >
-              Get a Quote
+              {t('nav.getQuote')}
             </Link>
           </div>
 
@@ -93,6 +101,12 @@ function Navbar() {
       {/* Mobile Menu */}
       <div className={`md:hidden border-t border-white/10 ${menuOpen ? '' : 'hidden'}`}>
         <div className="px-6 py-4 space-y-1 bg-charcoal/95 backdrop-blur-md">
+          <button
+            onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
+            className="block w-full text-start px-4 py-3 text-sm font-medium rounded-md text-warm-cream/80 hover:text-amber hover:bg-white/5 transition-colors"
+          >
+            {lang === 'en' ? 'عربي' : 'EN'}
+          </button>
           {navLinks.map(({ to, label }) => (
             <Link
               key={to}
@@ -112,7 +126,7 @@ function Navbar() {
             onClick={() => setMenuOpen(false)}
             className="block px-4 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md text-center mt-2"
           >
-            Get a Quote
+            {t('nav.getQuote')}
           </Link>
         </div>
       </div>
