@@ -59,7 +59,7 @@ const en = {
       },
     },
     philosophy: {
-      eyebrow: "OUR PHILOSOPHY",
+      eyebrow: "Our Philosophy",
       heading: "Real Craftsmanship, Built for Protection",
       body1: "Every pallet, box, and crate we produce is made with care, precision, and a strong focus on durability. We use quality eucalyptus wood and dependable construction methods to create products that perform in storage, transport, and export environments.",
       body2: "We believe wood packaging should do more than carry products. It should protect them, organize them, and represent your business professionally. That is why we focus on solid assembly, clean finishing, and practical designs that combine strength with presentation.",
@@ -99,7 +99,7 @@ const en = {
       body: "We're a Cairo-based wood packaging manufacturer that has supplied pallets, boxes, and crates to businesses across Egypt for over two decades.",
     },
     story: {
-      eyebrow: "WHO WE ARE",
+      eyebrow: "Who We Are",
       heading: "Our Story",
       body1: "Eucalyptus Wood Pallet started with a simple belief: wood packaging should be built to actually work — not just look the part. For over 20 years, we've manufactured pallets, boxes, and crates for factories, warehouses, agricultural businesses, and exporters across Egypt. Every product leaves our Cairo workshop built to handle the demands of real operations.",
       body2: "We've grown by earning the trust of businesses who need packaging they can rely on, order after order. We don't cut corners on materials, construction, or finishing. When your product is in one of our crates heading to a customer, it should arrive in exactly the condition it left.",
@@ -169,7 +169,7 @@ const en = {
       feature2: "Strong load-bearing construction",
       feature3: "Ideal for warehousing and logistics",
       feature4: "Clean finishing with durable assembly",
-      cta: "Discuss Your Pallets →",
+      cta: "Discuss Your Pallets",
     },
     boxes: {
       eyebrow: "Premium Packaging",
@@ -179,7 +179,7 @@ const en = {
       feature2: "Smooth finish and clean presentation",
       feature3: "Strong side panels and handle cutouts",
       feature4: "Ideal for storage, display, and transport",
-      cta: "Design Your Boxes →",
+      cta: "Design Your Boxes",
     },
     crates: {
       eyebrow: "Export & Logistics",
@@ -189,7 +189,7 @@ const en = {
       feature2: "Suitable for export and warehouse use",
       feature3: "Built for product protection and stability",
       feature4: "Available in custom dimensions",
-      cta: "Plan Your Crates →",
+      cta: "Plan Your Crates",
     },
     custom: {
       eyebrow: "Built to Your Specs",
