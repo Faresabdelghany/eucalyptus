@@ -73,3 +73,19 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(12px);
   background-color: rgba(44, 44, 44, 0.95) !important;
 }
+
+/* Arabic font support */
+[lang="ar"] body {
+  font-family: 'Noto Sans Arabic', 'DM Sans', sans-serif;
+}
+
+[lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3,
+[lang="ar"] h4, [lang="ar"] h5, [lang="ar"] h6 {
+  font-family: 'Noto Sans Arabic', 'Playfair Display', serif;
+}
+
+/* RTL reveal animation direction overrides */
+[dir="rtl"] .reveal-left { transform: translateX(48px); }
+[dir="rtl"] .reveal-right { transform: translateX(-48px); }
+[dir="rtl"] .reveal-left.visible,
+[dir="rtl"] .reveal-right.visible { transform: translateX(0); }
