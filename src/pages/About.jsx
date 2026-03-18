@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import useScrollReveal from '../hooks/useScrollReveal';
+import { useLanguage } from '../context/LanguageContext.jsx';
 
 function About() {
+  const { t } = useLanguage();
   useScrollReveal();
 
   return (
     <main>
       <Helmet>
-        <title>About Us | Wood Packaging Manufacturer in Cairo | Eucalyptus Wood Pallet</title>
-        <meta name="description" content="Eucalyptus Wood Pallet is a Cairo-based wood packaging manufacturer with 20+ years supplying pallets, boxes, and crates to factories, warehouses, and exporters across Egypt." />
+        <title>{t('about.meta.title')}</title>
+        <meta name="description" content={t('about.meta.description')} />
         <link rel="canonical" href="https://eucalyptuswoodpallet.com/about" />
         <meta property="og:title" content="About Us | Wood Packaging Manufacturer in Cairo" />
         <meta property="og:description" content="20+ years manufacturing wooden pallets, boxes, and crates in Cairo, Egypt. Built around quality eucalyptus wood and dependable supply." />
@@ -23,9 +25,9 @@ function About() {
           <div className="absolute inset-0 bg-charcoal/75"></div>
         </div>
         <div className="relative z-10 text-center px-6">
-          <p className="reveal text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Our Story</p>
-          <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-bold text-warm-cream tracking-tight">Built in Cairo. Trusted Across Egypt.</h1>
-          <p className="reveal reveal-delay-2 mt-6 text-lg text-warm-cream/70 max-w-xl mx-auto leading-relaxed">We're a Cairo-based wood packaging manufacturer that has supplied pallets, boxes, and crates to businesses across Egypt for over two decades.</p>
+          <p className="reveal text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('about.hero.eyebrow')}</p>
+          <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-bold text-warm-cream tracking-tight">{t('about.hero.heading')}</h1>
+          <p className="reveal reveal-delay-2 mt-6 text-lg text-warm-cream/70 max-w-xl mx-auto leading-relaxed">{t('about.hero.body')}</p>
         </div>
       </section>
 
@@ -40,11 +42,11 @@ function About() {
               <div className="absolute -top-6 -left-6 w-32 h-32 border-2 border-amber/20 rounded-2xl -z-10"></div>
             </div>
             <div className="reveal-right order-1 lg:order-2">
-              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">WHO WE ARE</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Our Story</h2>
+              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('about.story.eyebrow')}</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">{t('about.story.heading')}</h2>
               <div className="mt-8 space-y-6 text-muted leading-relaxed">
-                <p>Eucalyptus Wood Pallet started with a simple belief: wood packaging should be built to actually work — not just look the part. For over 20 years, we've manufactured pallets, boxes, and crates for factories, warehouses, agricultural businesses, and exporters across Egypt. Every product leaves our Cairo workshop built to handle the demands of real operations.</p>
-                <p>We've grown by earning the trust of businesses who need packaging they can rely on, order after order. We don't cut corners on materials, construction, or finishing. When your product is in one of our crates heading to a customer, it should arrive in exactly the condition it left.</p>
+                <p>{t('about.story.body1')}</p>
+                <p>{t('about.story.body2')}</p>
               </div>
             </div>
           </div>
@@ -55,8 +57,8 @@ function About() {
       <section className="py-24 lg:py-32 bg-ivory">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="reveal text-center max-w-2xl mx-auto mb-16 lg:mb-20">
-            <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">What Guides Us</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-tight">What We Stand For</h2>
+            <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('about.values.eyebrow')}</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-tight">{t('about.values.heading')}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             <div className="reveal reveal-delay-1 text-center p-8 lg:p-10">
@@ -65,8 +67,8 @@ function About() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-charcoal mb-4">Quality Materials</h3>
-              <p className="text-sm text-muted leading-relaxed">We work exclusively with eucalyptus wood — chosen for its natural density, moisture resistance, and load-bearing strength. Every batch is carefully selected before production. Your packaging is only as reliable as what it's built from, and we don't compromise on that.</p>
+              <h3 className="text-xl font-semibold text-charcoal mb-4">{t('about.values.quality.title')}</h3>
+              <p className="text-sm text-muted leading-relaxed">{t('about.values.quality.body')}</p>
             </div>
             <div className="reveal reveal-delay-2 text-center p-8 lg:p-10">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber/10 mb-6">
@@ -75,8 +77,8 @@ function About() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-charcoal mb-4">Expert Craftsmanship</h3>
-              <p className="text-sm text-muted leading-relaxed">Our production team brings over 12 years of woodworking experience to every order. We use precise cutting, solid assembly, and consistent finishing to build packaging that holds up in warehouses, survives long-distance transport, and arrives looking professional every time.</p>
+              <h3 className="text-xl font-semibold text-charcoal mb-4">{t('about.values.craftsmanship.title')}</h3>
+              <p className="text-sm text-muted leading-relaxed">{t('about.values.craftsmanship.body')}</p>
             </div>
             <div className="reveal reveal-delay-3 text-center p-8 lg:p-10">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber/10 mb-6">
@@ -84,8 +86,8 @@ function About() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-charcoal mb-4">Customer Focus</h3>
-              <p className="text-sm text-muted leading-relaxed">We work directly with each client to understand their load requirements, dimensions, and operational needs. Whether you need standard sizes in bulk or fully custom solutions, we build around your business — not a fixed catalog. Most clients become long-term partners because we make it easy to reorder exactly what works.</p>
+              <h3 className="text-xl font-semibold text-charcoal mb-4">{t('about.values.customer.title')}</h3>
+              <p className="text-sm text-muted leading-relaxed">{t('about.values.customer.body')}</p>
             </div>
           </div>
         </div>
@@ -95,9 +97,9 @@ function About() {
       <section className="py-24 lg:py-32 bg-warm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="reveal text-center max-w-2xl mx-auto mb-16 lg:mb-20">
-            <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">How We Work</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-tight">From Vision to Reality</h2>
-            <p className="mt-6 text-lg text-muted leading-relaxed">From first conversation to final delivery, here's what to expect.</p>
+            <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('about.process.eyebrow')}</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-tight">{t('about.process.heading')}</h2>
+            <p className="mt-6 text-lg text-muted leading-relaxed">{t('about.process.subheading')}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="reveal reveal-delay-1 relative bg-ivory rounded-xl p-8 shadow-sm">
@@ -105,32 +107,32 @@ function About() {
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber text-charcoal text-sm font-bold">01</span>
                 <div className="flex-1 h-px bg-amber/20"></div>
               </div>
-              <h3 className="text-lg font-semibold text-charcoal mb-3">Consultation</h3>
-              <p className="text-sm text-muted leading-relaxed">We discuss your requirements — product dimensions, load capacity, quantities, and intended use. Whether you contact us by phone or visit our facility, this first conversation is free and comes with no obligations.</p>
+              <h3 className="text-lg font-semibold text-charcoal mb-3">{t('about.process.step1.title')}</h3>
+              <p className="text-sm text-muted leading-relaxed">{t('about.process.step1.body')}</p>
             </div>
             <div className="reveal reveal-delay-2 relative bg-ivory rounded-xl p-8 shadow-sm">
               <div className="flex items-center gap-4 mb-6">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber text-charcoal text-sm font-bold">02</span>
                 <div className="flex-1 h-px bg-amber/20"></div>
               </div>
-              <h3 className="text-lg font-semibold text-charcoal mb-3">Design</h3>
-              <p className="text-sm text-muted leading-relaxed">Based on your requirements, we prepare specifications and a detailed quote for your approval. You'll confirm dimensions, quantities, and timeline before we begin production.</p>
+              <h3 className="text-lg font-semibold text-charcoal mb-3">{t('about.process.step2.title')}</h3>
+              <p className="text-sm text-muted leading-relaxed">{t('about.process.step2.body')}</p>
             </div>
             <div className="reveal reveal-delay-3 relative bg-ivory rounded-xl p-8 shadow-sm">
               <div className="flex items-center gap-4 mb-6">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber text-charcoal text-sm font-bold">03</span>
                 <div className="flex-1 h-px bg-amber/20"></div>
               </div>
-              <h3 className="text-lg font-semibold text-charcoal mb-3">Production</h3>
-              <p className="text-sm text-muted leading-relaxed">Your order is manufactured in our Cairo workshop using quality eucalyptus wood. We keep you updated on progress and maintain consistent quality from the first unit to the last.</p>
+              <h3 className="text-lg font-semibold text-charcoal mb-3">{t('about.process.step3.title')}</h3>
+              <p className="text-sm text-muted leading-relaxed">{t('about.process.step3.body')}</p>
             </div>
             <div className="reveal reveal-delay-4 relative bg-ivory rounded-xl p-8 shadow-sm">
               <div className="flex items-center gap-4 mb-6">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber text-charcoal text-sm font-bold">04</span>
                 <div className="flex-1 h-px bg-amber/20"></div>
               </div>
-              <h3 className="text-lg font-semibold text-charcoal mb-3">Delivery</h3>
-              <p className="text-sm text-muted leading-relaxed">Your finished products are delivered on time and in full. Every order is inspected before it leaves our workshop so you receive packaging that's ready to go to work immediately.</p>
+              <h3 className="text-lg font-semibold text-charcoal mb-3">{t('about.process.step4.title')}</h3>
+              <p className="text-sm text-muted leading-relaxed">{t('about.process.step4.body')}</p>
             </div>
           </div>
         </div>
@@ -144,12 +146,12 @@ function About() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <div className="reveal">
-            <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-6">Ready to Start?</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-warm-cream leading-tight">Let's Talk About Your Project</h2>
-            <p className="mt-6 text-lg text-warm-cream/70 leading-relaxed max-w-2xl mx-auto">Whether you know exactly what you need or want help figuring out the right solution, we're happy to talk through it. Your first consultation is always free.</p>
+            <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-6">{t('about.cta.eyebrow')}</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-warm-cream leading-tight">{t('about.cta.heading')}</h2>
+            <p className="mt-6 text-lg text-warm-cream/70 leading-relaxed max-w-2xl mx-auto">{t('about.cta.body')}</p>
             <Link to="/contact" className="inline-flex items-center mt-10 px-8 py-4 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-              Request a Free Quote
-              <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+              {t('about.cta.cta')}
+              <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
             </Link>
           </div>
         </div>
