@@ -153,7 +153,7 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-charcoal">{t('contact.info.addressLabel')}</h3>
-                  <p className="text-muted whitespace-pre-line">{"27 Road 9, Maadi\nCairo, Egypt 11728"}</p>
+                  <p className="text-muted whitespace-pre-line">{t('contact.info.addressValue')}</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
