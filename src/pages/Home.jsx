@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 function Home() {
@@ -6,6 +7,41 @@ function Home() {
 
   return (
     <main>
+      <Helmet>
+        <title>Wooden Pallets, Boxes & Crates Manufacturer | Cairo, Egypt | Eucalyptus Wood Pallet</title>
+        <meta name="description" content="Eucalyptus Wood Pallet manufactures wooden pallets, boxes, and crates for factories, warehouses, and exporters across Egypt. 20+ years experience. Cairo-based. Request a free quote." />
+        <link rel="canonical" href="https://eucalyptuswoodpallet.com/" />
+        <meta property="og:title" content="Wooden Pallets, Boxes & Crates Manufacturer | Cairo, Egypt" />
+        <meta property="og:description" content="Eucalyptus Wood Pallet manufactures wooden pallets, boxes, and crates for factories, warehouses, and exporters across Egypt. 20+ years experience. Request a free quote." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://eucalyptuswoodpallet.com/" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Eucalyptus Wood Pallet",
+          "description": "Wood packaging manufacturer producing wooden pallets, boxes, and crates for factories, warehouses, and exporters across Egypt.",
+          "url": "https://eucalyptuswoodpallet.com",
+          "telephone": "+20225168243",
+          "email": "info@eucalyptuswoodpallet.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "27 Road 9, Maadi",
+            "addressLocality": "Cairo",
+            "postalCode": "11728",
+            "addressCountry": "EG"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 29.9602,
+            "longitude": 31.2579
+          },
+          "openingHoursSpecification": [
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00" },
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "14:00" }
+          ],
+          "sameAs": []
+        })}</script>
+      </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -36,7 +72,7 @@ function Home() {
       <section className="py-24 lg:py-32 bg-warm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="reveal max-w-2xl mb-16 lg:mb-20">
-            <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">What We Create</p>
+            <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Our Products</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-tight">What We Build</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
@@ -47,9 +83,9 @@ function Home() {
               </div>
               <div className="p-6 lg:p-8">
                 <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">Wooden Pallets</h3>
-                <p className="mt-3 text-sm text-muted leading-relaxed">Strong eucalyptus wood pallets built for storage, transport, and industrial use. Designed for durability, stability, and dependable performance in warehouses, factories, and logistics operations.</p>
+                <p className="mt-3 text-sm text-muted leading-relaxed">Built from dense eucalyptus for maximum load capacity. Standard and custom sizes for forklift, rack, and floor storage across factories and logistics operations.</p>
                 <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
-                  Explore
+                  See Details
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </span>
               </div>
@@ -61,9 +97,9 @@ function Home() {
               </div>
               <div className="p-6 lg:p-8">
                 <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">Wooden Boxes</h3>
-                <p className="mt-3 text-sm text-muted leading-relaxed">Premium wooden boxes made to protect products during handling, storage, and shipping. Ideal for agriculture, retail presentation, commercial organization, and packaging needs.</p>
+                <p className="mt-3 text-sm text-muted leading-relaxed">Protect products during handling and transport while keeping presentation clean. Popular with agricultural exporters, distributors, and retail suppliers.</p>
                 <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
-                  Explore
+                  See Details
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </span>
               </div>
@@ -75,9 +111,9 @@ function Home() {
               </div>
               <div className="p-6 lg:p-8">
                 <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">Wooden Crates</h3>
-                <p className="mt-3 text-sm text-muted leading-relaxed">Durable wooden crates crafted for export, distribution, and secure product movement. Built with quality wood, clean finishing, and reliable structural strength.</p>
+                <p className="mt-3 text-sm text-muted leading-relaxed">The right choice when shipments need structural containment. Built for international export, heavy industrial goods, and long-distance distribution.</p>
                 <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
-                  Explore
+                  See Details
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </span>
               </div>
@@ -134,12 +170,12 @@ function Home() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <div className="reveal">
-            <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-6">Ready to Place an Order?</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-warm-cream leading-tight">Ready to Talk About Your Project?</h2>
+            <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-6">Cairo, Egypt</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-warm-cream leading-tight">Ready to Place Your Order?</h2>
             <p className="mt-6 text-lg text-warm-cream/70 leading-relaxed max-w-2xl mx-auto">Tell us what you need — dimensions, quantities, intended use — and we'll take it from there. No pressure, no sales pitch, just straightforward advice from people who know wood packaging.</p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link to="/contact" className="inline-flex items-center px-8 py-4 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-                Schedule Your Free Consultation
+                Request a Free Quote
                 <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </Link>
               <a href="tel:+20225168243" className="inline-flex items-center px-8 py-4 text-sm font-semibold text-warm-cream border border-warm-cream/30 rounded-md hover:border-amber hover:text-amber transition-all duration-300">

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import useScrollReveal from '../hooks/useScrollReveal.js';
 
 const selectChevronStyle = {
@@ -51,18 +52,27 @@ function Contact() {
 
   return (
     <main>
+      <Helmet>
+        <title>Contact Us | Request a Quote | Eucalyptus Wood Pallet Cairo</title>
+        <meta name="description" content="Contact Eucalyptus Wood Pallet in Cairo, Egypt. Request a free quote for wooden pallets, boxes, crates, or custom packaging. Call (02) 2516-8243 or fill out our form." />
+        <link rel="canonical" href="https://eucalyptuswoodpallet.com/contact" />
+        <meta property="og:title" content="Contact Us | Request a Quote | Eucalyptus Wood Pallet" />
+        <meta property="og:description" content="Get in touch with our team in Cairo to request a quote for wooden pallets, boxes, crates, or custom packaging solutions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://eucalyptuswoodpallet.com/contact" />
+      </Helmet>
       {/* Hero */}
       <section className="bg-charcoal text-warm-cream py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-[Playfair_Display] reveal">Let's Talk About Your Project</h1>
-          <p className="mt-6 text-lg md:text-xl text-warm-cream/70 max-w-2xl mx-auto reveal reveal-delay-1">Whether you know exactly what you want or you're just starting to explore ideas, we're here to help. Reach out however works best for you.</p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-[Playfair_Display] reveal">Request a Quote in Cairo</h1>
+          <p className="mt-6 text-lg md:text-xl text-warm-cream/70 max-w-2xl mx-auto reveal reveal-delay-1">Tell us what you need — product type, dimensions, quantities — and we'll get back to you with pricing and lead times within one business day.</p>
         </div>
       </section>
 
       {/* Contact Form + Info */}
       <section className="py-20 lg:py-28 bg-warm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <p className="text-lg text-muted max-w-3xl mb-12 reveal">We love hearing from homeowners who are excited about their space. Drop us a line, give us a call, or stop by the shop. We're always happy to talk wood, design, and what's possible for your home.</p>
+          <p className="text-lg text-muted max-w-3xl mb-12 reveal">Drop us a line, give us a call, or visit our workshop in Maadi. Whether you have a standing order or a one-off requirement, we're happy to discuss what you need.</p>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Contact Form */}
             <div className="lg:col-span-3 reveal-left">
@@ -81,35 +91,35 @@ function Contact() {
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-charcoal mb-2">Phone Number (optional)</label>
-                      <input type="tel" id="phone" name="phone" placeholder="(503) 555-0000" value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-charcoal/15 bg-warm-cream/50 text-charcoal placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors" />
+                      <input type="tel" id="phone" name="phone" placeholder="(02) 555-0000" value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-charcoal/15 bg-warm-cream/50 text-charcoal placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors" />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-charcoal mb-2">Project Type</label>
+                    <label htmlFor="service" className="block text-sm font-medium text-charcoal mb-2">Product Type</label>
                     <select id="service" name="service" value={formData.service} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-charcoal/15 bg-warm-cream/50 text-charcoal focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors appearance-none" style={selectChevronStyle}>
-                      <option value="">Select a project type</option>
-                      <option value="kitchen-cabinets">Kitchen Cabinets</option>
-                      <option value="bathroom-vanity">Bathroom Vanity</option>
-                      <option value="built-in-shelving">Built-In Shelving</option>
-                      <option value="cabinet-refacing">Cabinet Refacing</option>
+                      <option value="">Select a product type</option>
+                      <option value="wooden-pallets">Wooden Pallets</option>
+                      <option value="wooden-boxes">Wooden Boxes</option>
+                      <option value="wooden-crates">Wooden Crates</option>
+                      <option value="custom-packaging">Custom Packaging</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-charcoal mb-2">Tell Us About Your Project <span className="text-amber">*</span></label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Give us a sense of what you're looking for -- the room, the style, your timeline, anything that helps us understand your vision." value={formData.message} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-charcoal/15 bg-warm-cream/50 text-charcoal placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors resize-vertical"></textarea>
+                    <label htmlFor="message" className="block text-sm font-medium text-charcoal mb-2">Tell Us About Your Order <span className="text-amber">*</span></label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Tell us what you need — product type, dimensions, quantities, intended use, and any specific requirements." value={formData.message} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-charcoal/15 bg-warm-cream/50 text-charcoal placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors resize-vertical"></textarea>
                   </div>
                   <button type="submit" className="w-full md:w-auto inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-charcoal bg-amber rounded-lg hover:bg-amber/90 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer">Send Message</button>
                   {status === 'success' && (
                     <div id="form-success" className="p-4 rounded-lg bg-sage/20 border border-sage/30 text-charcoal">
                       <p className="font-medium">Message Received!</p>
-                      <p className="text-sm text-muted mt-1">Thanks for reaching out. We typically respond within one business day. If your project is time-sensitive, give us a call at (02) 2516-8243 and we'll get you on the calendar sooner.</p>
+                      <p className="text-sm text-muted mt-1">Thanks for reaching out. We typically respond within one business day with pricing and lead times. For urgent orders, call us directly at (02) 2516-8243.</p>
                     </div>
                   )}
                   {status === 'error' && (
                     <div id="form-error" className="p-4 rounded-lg bg-red-50 border border-red-200 text-red-800">
                       <p className="font-medium">Something Went Wrong</p>
-                      <p className="text-sm mt-1">We weren't able to send your message. Please try again, or contact us directly at (02) 2516-8243 or hello@cedarstone-cabinets.com.</p>
+                      <p className="text-sm mt-1">We weren't able to send your message. Please try again, or contact us directly at (02) 2516-8243 or info@eucalyptuswoodpallet.com.</p>
                     </div>
                   )}
                 </form>
@@ -132,7 +142,7 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-charcoal">Email</h3>
-                  <a href="mailto:hello@cedarstone-cabinets.com" className="text-muted hover:text-amber transition-colors">hello@cedarstone-cabinets.com</a>
+                  <a href="mailto:info@eucalyptuswoodpallet.com" className="text-muted hover:text-amber transition-colors">info@eucalyptuswoodpallet.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -140,7 +150,7 @@ function Contact() {
                   <svg className="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-charcoal">Workshop & Showroom</h3>
+                  <h3 className="font-semibold text-charcoal">Workshop & Factory</h3>
                   <p className="text-muted">27 Road 9, Maadi<br/>Cairo, Egypt 11728</p>
                 </div>
               </div>
@@ -155,8 +165,8 @@ function Contact() {
               </div>
               <div className="w-full h-px bg-charcoal/10"></div>
               <div className="bg-deep-walnut/5 rounded-xl p-6 border border-deep-walnut/10">
-                <h3 className="font-semibold text-charcoal mb-2 font-[Playfair_Display]">Free In-Home Consultations</h3>
-                <p className="text-sm text-muted leading-relaxed">We offer complimentary in-home consultations throughout the greater Cairo area. Let us come to you to discuss your project, take measurements, and provide a detailed estimate.</p>
+                <h3 className="font-semibold text-charcoal mb-2 font-[Playfair_Display]">Free Quotes, No Commitment</h3>
+                <p className="text-sm text-muted leading-relaxed">Tell us your product type, dimensions, and quantities and we'll provide a detailed quote at no charge. You can also visit our workshop in Maadi to discuss requirements in person.</p>
               </div>
             </div>
           </div>
@@ -167,11 +177,11 @@ function Contact() {
       <section className="bg-ivory py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-10 reveal">
-            <h2 className="text-2xl md:text-3xl font-bold font-[Playfair_Display] text-charcoal">Visit Our Showroom</h2>
-            <p className="mt-3 text-muted max-w-xl mx-auto">Stop by our workshop and showroom in Maadi, Cairo to see our craftsmanship firsthand and explore material samples.</p>
+            <h2 className="text-2xl md:text-3xl font-bold font-[Playfair_Display] text-charcoal">Visit Our Workshop</h2>
+            <p className="mt-3 text-muted max-w-xl mx-auto">Stop by our workshop in Maadi, Cairo to discuss your requirements in person and see our production firsthand.</p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg border border-charcoal/5 reveal reveal-delay-1">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.2!2d31.2579!3d29.9602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDU3JzM2LjciTiAzMcKwMTUnMjguNCJF!5e0!3m2!1sen!2seg!4v1700000000000" width="100%" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Cedar & Stone Cabinetry location on Google Maps"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.2!2d31.2579!3d29.9602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDU3JzM2LjciTiAzMcKwMTUnMjguNCJF!5e0!3m2!1sen!2seg!4v1700000000000" width="100%" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Eucalyptus Wood Pallet workshop location in Maadi, Cairo"></iframe>
           </div>
         </div>
       </section>

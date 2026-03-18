@@ -11,14 +11,14 @@ function App() {
     <BrowserRouter>
       <div className="min-h-screen flex flex-col bg-warm-cream text-charcoal antialiased">
         <Navbar />
-        <main className="flex-1 pt-20">
+        <div className="flex-1 pt-20">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
-        </main>
+        </div>
         <Footer />
       </div>
     </BrowserRouter>

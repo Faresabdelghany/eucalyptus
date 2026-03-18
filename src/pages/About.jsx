@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 function About() {
@@ -6,6 +7,15 @@ function About() {
 
   return (
     <main>
+      <Helmet>
+        <title>About Us | Wood Packaging Manufacturer in Cairo | Eucalyptus Wood Pallet</title>
+        <meta name="description" content="Eucalyptus Wood Pallet is a Cairo-based wood packaging manufacturer with 20+ years supplying pallets, boxes, and crates to factories, warehouses, and exporters across Egypt." />
+        <link rel="canonical" href="https://eucalyptuswoodpallet.com/about" />
+        <meta property="og:title" content="About Us | Wood Packaging Manufacturer in Cairo" />
+        <meta property="og:description" content="20+ years manufacturing wooden pallets, boxes, and crates in Cairo, Egypt. Built around quality eucalyptus wood and dependable supply." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://eucalyptuswoodpallet.com/about" />
+      </Helmet>
       {/* Hero Banner */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -14,7 +24,7 @@ function About() {
         </div>
         <div className="relative z-10 text-center px-6">
           <p className="reveal text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Our Story</p>
-          <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-bold text-warm-cream tracking-tight">Built on Family, Rooted in Cairo</h1>
+          <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-bold text-warm-cream tracking-tight">Built in Cairo. Trusted Across Egypt.</h1>
           <p className="reveal reveal-delay-2 mt-6 text-lg text-warm-cream/70 max-w-xl mx-auto leading-relaxed">We're a Cairo-based wood packaging manufacturer that has supplied pallets, boxes, and crates to businesses across Egypt for over two decades.</p>
         </div>
       </section>
@@ -24,7 +34,7 @@ function About() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="reveal-left relative order-2 lg:order-1">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img src="/images/about-pallet.png" alt="Craftsman building a wooden pallet" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -top-6 -left-6 w-32 h-32 border-2 border-amber/20 rounded-2xl -z-10"></div>
@@ -33,10 +43,8 @@ function About() {
               <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">WHO WE ARE</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Our Story</h2>
               <div className="mt-8 space-y-6 text-muted leading-relaxed">
-                <p>At Eucalyptus Wood Pallet, our story is defined by craftsmanship, reliability, and a clear commitment to excellence. From the very beginning, we set out to create wooden pallets, boxes, and crates that offer more than basic function. We wanted every product to reflect strength, precision, and a standard of quality that businesses can trust without hesitation.</p>
-                <p>Our approach is rooted in the belief that premium wood packaging plays an essential role in how products are stored, protected, and presented. For that reason, we focus on carefully selected materials, refined construction, and consistent finishing, ensuring that every pallet, box, and crate delivers both durability and a professional appearance. Each piece is built to serve demanding environments while maintaining the elegance and integrity of fine workmanship.</p>
-                <p>Over time, Eucalyptus Wood Pallet has become a trusted name for businesses seeking dependable packaging solutions tailored to real operational needs. Whether supporting logistics, warehousing, agriculture, retail, or export, our products are designed to perform with confidence and distinction.</p>
-                <p>What truly shapes our story is the pride we take in every detail. We do not simply manufacture wood packaging; we create solutions that embody trust, protection, and enduring value. Today, we continue to grow by upholding the same values that shaped our foundation: quality, precision, consistency, and lasting partnership.</p>
+                <p>Eucalyptus Wood Pallet started with a simple belief: wood packaging should be built to actually work — not just look the part. For over 20 years, we've manufactured pallets, boxes, and crates for factories, warehouses, agricultural businesses, and exporters across Egypt. Every product leaves our Cairo workshop built to handle the demands of real operations.</p>
+                <p>We've grown by earning the trust of businesses who need packaging they can rely on, order after order. We don't cut corners on materials, construction, or finishing. When your product is in one of our crates heading to a customer, it should arrive in exactly the condition it left.</p>
               </div>
             </div>
           </div>
@@ -140,7 +148,7 @@ function About() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-warm-cream leading-tight">Let's Talk About Your Project</h2>
             <p className="mt-6 text-lg text-warm-cream/70 leading-relaxed max-w-2xl mx-auto">Whether you know exactly what you need or want help figuring out the right solution, we're happy to talk through it. Your first consultation is always free.</p>
             <Link to="/contact" className="inline-flex items-center mt-10 px-8 py-4 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-              Schedule a Free Consultation
+              Request a Free Quote
               <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
             </Link>
           </div>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 function Services() {
@@ -6,6 +7,15 @@ function Services() {
 
   return (
     <main>
+      <Helmet>
+        <title>Wooden Pallets, Boxes, Crates & Custom Packaging Cairo | Eucalyptus Wood Pallet</title>
+        <meta name="description" content="We manufacture wooden pallets, boxes, crates, and custom packaging from eucalyptus wood. Serving factories, warehouses, exporters, and agricultural businesses across Egypt." />
+        <link rel="canonical" href="https://eucalyptuswoodpallet.com/services" />
+        <meta property="og:title" content="Wooden Pallets, Boxes, Crates & Custom Packaging | Cairo, Egypt" />
+        <meta property="og:description" content="Eucalyptus wood pallets, boxes, crates, and custom packaging for industrial and export use. Manufactured in Cairo, Egypt." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://eucalyptuswoodpallet.com/services" />
+      </Helmet>
       {/* Hero */}
       <section className="relative h-[65vh] min-h-[480px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -32,7 +42,7 @@ function Services() {
               <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Signature Product</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Wooden Pallets</h2>
               <div className="mt-6 space-y-4 text-muted leading-relaxed">
-                <p>Our wooden pallets are designed to deliver dependable strength, stability, and performance across storage, transport, and industrial operations. Crafted from high-quality eucalyptus wood, each pallet is built with precision to support demanding commercial environments while maintaining a clean, professional finish. Whether used in warehouses, factories, logistics centers, or export operations, our pallets provide the durability businesses need and the consistency they can trust.</p>
+                <p>Our pallets are built around one priority: holding weight without failing. Dense eucalyptus construction gives them the load-bearing strength that factory floors and warehouse racks demand. Standard sizes fit most forklift and pallet racking systems — and if your operation needs a different footprint, we build to spec. Used daily by manufacturers, logistics companies, and exporters across Egypt who need consistent supply and zero surprises.</p>
               </div>
               <ul className="mt-8 space-y-3">
                 <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Standard and custom pallet sizes</li>
@@ -56,7 +66,7 @@ function Services() {
               <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Premium Packaging</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Wooden Boxes</h2>
               <div className="mt-6 space-y-4 text-muted leading-relaxed">
-                <p>Our wooden boxes are crafted to deliver reliable protection, clean presentation, and practical performance across storage, transport, and display applications. Made from high-quality eucalyptus wood, each box is designed with precision and a refined finish to support commercial, agricultural, and export needs. Whether used for product organization, packaging, or presentation, our wooden boxes combine strength, durability, and premium craftsmanship in every detail.</p>
+                <p>Our wooden boxes protect products through handling, transport, and storage while keeping presentation sharp. Smooth finish, clean edges, and optional handle cutouts make them the go-to choice for agricultural exporters packing fruit and vegetables, retailers packaging goods for display, and distributors who need packaging that represents their product well. Available in multiple sizes — or built to your exact dimensions.</p>
               </div>
               <ul className="mt-8 space-y-3">
                 <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Available in multiple box sizes</li>
@@ -90,7 +100,7 @@ function Services() {
               <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">Export & Logistics</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Wooden Crates</h2>
               <div className="mt-6 space-y-4 text-muted leading-relaxed">
-                <p>Our wooden crates are built to deliver dependable protection, structural strength, and professional presentation for storage, handling, and export operations. Crafted from high-quality eucalyptus wood, each crate is designed to support demanding commercial use while maintaining a clean, premium finish. Whether used for logistics, agricultural supply, industrial packaging, or product movement, our wooden crates provide the durability, stability, and confidence businesses need in every shipment.</p>
+                <p>When a shipment needs to survive long-distance transport, international export, or rough handling — crates are the right call. Our slatted eucalyptus crates provide structural containment that boxes can't match, keeping heavy or irregular goods secure from workshop to destination. Built for industrial equipment, machinery parts, bulk agricultural goods, and any product where arriving intact isn't optional. Custom dimensions available.</p>
               </div>
               <ul className="mt-8 space-y-3">
                 <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>Strong slatted construction for transport</li>
@@ -150,7 +160,7 @@ function Services() {
                 <svg className="w-7 h-7 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
               </div>
               <h4 className="text-base font-semibold text-warm-cream mb-2">High Density</h4>
-              <p className="text-sm text-warm-cream/50 leading-relaxed">Naturally dense grain gives eucalyptus exceptional load-bearing strength for pallets and crates.</p>
+              <p className="text-sm text-warm-cream/50 leading-relaxed">Naturally dense grain gives eucalyptus exceptional load-bearing strength — so pallets don't bow under heavy stock and crates don't crack mid-shipment.</p>
             </div>
             <div className="reveal reveal-delay-1 group text-center p-8 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-300">
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-amber/10 mb-5">
@@ -168,10 +178,10 @@ function Services() {
             </div>
             <div className="reveal reveal-delay-3 group text-center p-8 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-300">
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-amber/10 mb-5">
-                <svg className="w-7 h-7 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                <svg className="w-7 h-7 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               </div>
-              <h4 className="text-base font-semibold text-warm-cream mb-2">Clean Finish</h4>
-              <p className="text-sm text-warm-cream/50 leading-relaxed">Machines and sands to a smooth, consistent surface — so your packaging looks as professional as your product.</p>
+              <h4 className="text-base font-semibold text-warm-cream mb-2">Locally Sourced</h4>
+              <p className="text-sm text-warm-cream/50 leading-relaxed">Eucalyptus grows fast and is widely available in Egypt — which means consistent material supply, shorter lead times, and no dependence on imported wood.</p>
             </div>
           </div>
         </div>
@@ -182,11 +192,11 @@ function Services() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <div className="reveal">
             <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-6">Start Your Project</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-tight">Let's Build Something Together</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-tight">Ready to Place Your Order?</h2>
             <p className="mt-6 text-lg text-muted leading-relaxed max-w-2xl mx-auto">Have an order in mind? Reach out and we'll walk you through options, pricing, and lead times. No commitment required.</p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link to="/contact" className="inline-flex items-center px-8 py-4 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-                Request a Free Consultation
+                Request a Free Quote
                 <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </Link>
               <a href="tel:+20225168243" className="inline-flex items-center px-8 py-4 text-sm font-semibold text-deep-walnut border-2 border-deep-walnut rounded-md hover:bg-deep-walnut hover:text-warm-cream transition-all duration-300">
