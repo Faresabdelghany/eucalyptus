@@ -8,7 +8,7 @@ const en = {
 
   footer: {
     tagline:
-      "Premium eucalyptus wood pallets, crafted in Cairo, Egypt. Serving local and international markets with quality and precision.",
+      "Premium eucalyptus wood pallets, crafted in Egypt. Serving local and international markets with quality and precision.",
     navigate: "Navigate",
     home: "Home",
     aboutUs: "About Us",
