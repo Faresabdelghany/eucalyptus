@@ -27,9 +27,8 @@ function Home() {
           "email": "info@eucalyptus-woodpallet.com",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "27 Road 9, Maadi",
-            "addressLocality": "Cairo",
-            "postalCode": "11728",
+            "streetAddress": "Al Huda Hussein - Markaz Badr - Beside Al Talaea School",
+            "addressLocality": "Badr City",
             "addressCountry": "EG"
           },
           "geo": {
@@ -38,8 +37,7 @@ function Home() {
             "longitude": 31.2579
           },
           "openingHoursSpecification": [
-            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00" },
-            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "14:00" }
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "08:00", "closes": "17:00" }
           ],
           "sameAs": []
         })}</script>
@@ -79,7 +77,7 @@ function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {/* Wooden Pallets card */}
-            <Link to="/services" className="reveal reveal-delay-1 group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+            <Link to="/services#pallets" className="reveal reveal-delay-1 group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
               <div className="aspect-[4/3] overflow-hidden">
                 <img src="/images/pallet-product.png" alt="Eucalyptus wooden pallets for industrial and logistics use" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
@@ -93,7 +91,7 @@ function Home() {
               </div>
             </Link>
             {/* Wooden Boxes card */}
-            <Link to="/services" className="reveal reveal-delay-2 group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+            <Link to="/services#boxes" className="reveal reveal-delay-2 group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
               <div className="aspect-[4/3] overflow-hidden">
                 <img src="/images/wooden-boxes.png" alt="Premium wooden boxes for storage, agriculture, and packaging" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
@@ -107,7 +105,7 @@ function Home() {
               </div>
             </Link>
             {/* Wooden Crates card */}
-            <Link to="/services" className="reveal reveal-delay-3 group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+            <Link to="/services#crates" className="reveal reveal-delay-3 group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
               <div className="aspect-[4/3] overflow-hidden">
                 <img src="/images/wooden-crates.png" alt="Durable wooden crates for export, distribution, and logistics" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>

@@ -42,10 +42,10 @@ function Footer() {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-amber mb-6">{t('footer.servicesHeading')}</h4>
             <ul className="space-y-3">
-              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.woodenPallets')}</Link></li>
-              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.woodenBoxes')}</Link></li>
-              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.woodenCrates')}</Link></li>
-              <li><Link to="/services" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.customPackaging')}</Link></li>
+              <li><Link to="/services#pallets" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.woodenPallets')}</Link></li>
+              <li><Link to="/services#boxes" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.woodenBoxes')}</Link></li>
+              <li><Link to="/services#crates" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.woodenCrates')}</Link></li>
+              <li><Link to="/services#custom" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.customPackaging')}</Link></li>
             </ul>
           </div>
           {/* Contact Info */}
@@ -57,7 +57,7 @@ function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
-                <a href="https://maps.app.goo.gl/Ky8PddERhWidNv9y7" target="_blank" rel="noopener noreferrer" className="hover:text-amber transition-colors">27 Road 9, Maadi<br/>Cairo, Egypt 11728</a>
+                <a href="https://maps.app.goo.gl/Ky8PddERhWidNv9y7" target="_blank" rel="noopener noreferrer" className="hover:text-amber transition-colors">Al Huda Hussein - Markaz Badr<br/>Beside Al Talaea School</a>
               </li>
               <li className="flex items-start gap-3">
                 <svg className="w-4 h-4 mt-0.5 text-amber/60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

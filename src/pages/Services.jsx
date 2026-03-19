@@ -32,7 +32,7 @@ function Services() {
       </section>
 
       {/* Wooden Pallets */}
-      <section className="py-24 lg:py-32 bg-warm-cream">
+      <section id="pallets" className="py-24 lg:py-32 bg-warm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="reveal-left">
@@ -62,7 +62,7 @@ function Services() {
       </section>
 
       {/* Wooden Boxes */}
-      <section className="py-24 lg:py-32 bg-ivory">
+      <section id="boxes" className="py-24 lg:py-32 bg-ivory">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="reveal-left order-2 lg:order-1">
@@ -92,7 +92,7 @@ function Services() {
       </section>
 
       {/* Wooden Crates */}
-      <section className="py-24 lg:py-32 bg-warm-cream">
+      <section id="crates" className="py-24 lg:py-32 bg-warm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="reveal-left">
@@ -122,7 +122,7 @@ function Services() {
       </section>
 
       {/* Custom Packaging */}
-      <section className="py-24 lg:py-32 bg-ivory">
+      <section id="custom" className="py-24 lg:py-32 bg-ivory">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="reveal-left order-2 lg:order-1">

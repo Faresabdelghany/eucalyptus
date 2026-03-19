@@ -288,10 +288,10 @@ const en = {
       phoneLabel: "Phone",
       emailLabel: "Email",
       addressLabel: "Workshop & Factory",
-      addressValue: "27 Road 9, Maadi\nCairo, Egypt 11728",
+      addressValue: "Al Huda Hussein - Markaz Badr\nBeside Al Talaea School",
       hoursLabel: "Hours",
       hoursValue:
-        "Monday - Friday: 8:00am - 5:00pm\nSaturday: 9:00am - 2:00pm\nSunday: Closed",
+        "Saturday - Thursday: 8:00am - 5:00pm\nFriday: Closed",
       freeQuote: {
         heading: "Free Quotes, No Commitment",
         body: "Tell us your product type, dimensions, and quantities and we'll provide a detailed quote at no charge. You can also visit our workshop to discuss requirements in person.",
@@ -299,7 +299,7 @@ const en = {
     },
     map: {
       heading: "Visit Our Workshop",
-      body: "Stop by our workshop in Maadi, Cairo to discuss your requirements in person and see our production firsthand.",
+      body: "Stop by our workshop in Markaz Badr to discuss your requirements in person and see our production firsthand.",
     },
   },
 };
