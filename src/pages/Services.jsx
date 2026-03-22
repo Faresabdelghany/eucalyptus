@@ -84,7 +84,7 @@ function Services() {
             </div>
             <div className="order-1 lg:order-2">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/images/wooden-boxes.png" alt="Premium eucalyptus wooden boxes for storage and transport" className="w-full h-full object-cover" />
+                <img src="/images/wooden-boxes.png" alt="Eucalyptus wooden boxes and crates — enclosed shipping box and open slatted crate for storage and transport" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>

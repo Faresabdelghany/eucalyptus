@@ -166,7 +166,7 @@ const en = {
     pallets: {
       eyebrow: "Signature Product",
       heading: "Wooden Pallets",
-      body: "Our pallets are built around one priority: holding weight without failing. Dense eucalyptus construction gives them the load-bearing strength that factory floors and warehouse racks demand. Standard sizes fit most forklift and pallet racking systems — and if your operation needs a different footprint, we build to spec. Used daily by manufacturers, logistics companies, and exporters across Egypt who need consistent supply and zero surprises.",
+      body: "Our pallets are built around one priority: holding weight without failing. Dense eucalyptus construction gives them the load-bearing strength that factory floors and warehouse racks demand. Standard sizes fit most forklift and pallet racking systems. If your operation needs a different footprint, we build to spec. Used daily by manufacturers, logistics companies, and exporters across Egypt who need consistent supply and zero surprises.",
       feature1: "Standard and custom pallet sizes",
       feature2: "Strong load-bearing construction",
       feature3: "Ideal for warehousing and logistics",
@@ -176,7 +176,7 @@ const en = {
     boxes: {
       eyebrow: "Premium Packaging",
       heading: "Wooden Boxes",
-      body: "Our wooden boxes protect products through handling, transport, and storage while keeping presentation sharp. Smooth finish, clean edges, and optional handle cutouts make them the go-to choice for agricultural exporters packing fruit and vegetables, retailers packaging goods for display, and distributors who need packaging that represents their product well. Available in multiple sizes — or built to your exact dimensions.",
+      body: "Our wooden boxes protect products through handling, transport, and storage while keeping presentation sharp. Smooth finish, clean edges, and optional handle cutouts make them the go-to choice for agricultural exporters packing fruit and vegetables, retailers packaging goods for display, and distributors who need packaging that represents their product well. Available in multiple sizes or built to your exact dimensions.",
       feature1: "Available in multiple box sizes",
       feature2: "Smooth finish and clean presentation",
       feature3: "Strong side panels and handle cutouts",
@@ -186,7 +186,7 @@ const en = {
     crates: {
       eyebrow: "Export & Logistics",
       heading: "Wooden Crates",
-      body: "When a shipment needs to survive long-distance transport, international export, or rough handling — crates are the right call. Our slatted eucalyptus crates provide structural containment that boxes can't match, keeping heavy or irregular goods secure from workshop to destination. Built for industrial equipment, machinery parts, bulk agricultural goods, and any product where arriving intact isn't optional. Custom dimensions available.",
+      body: "When a shipment needs to survive long-distance transport, international export, or rough handling, crates are the right call. Our slatted eucalyptus crates provide structural containment that boxes can't match, keeping heavy or irregular goods secure from workshop to destination. Built for industrial equipment, machinery parts, bulk agricultural goods, and any product where arriving intact isn't optional. Custom dimensions available.",
       feature1: "Strong slatted construction for transport",
       feature2: "Suitable for export and warehouse use",
       feature3: "Built for product protection and stability",
@@ -196,8 +196,8 @@ const en = {
     custom: {
       eyebrow: "Built to Your Specs",
       heading: "Custom Packaging Solutions",
-      body: "When standard sizes don't fit your product, we build to your exact specifications. Whether you need non-standard dimensions, reinforced construction for heavy loads, or packaging designed for a specific export requirement, we work with you to design and produce it. Custom orders follow the same quality standards as everything else we make — no shortcuts because the dimensions are different.",
-      feature1: "Any dimension — width, length, and height",
+      body: "When standard sizes don't fit your product, we build to your exact specifications. Whether you need non-standard dimensions, reinforced construction for heavy loads, or packaging designed for a specific export requirement, we work with you to design and produce it. Custom orders follow the same quality standards as everything else we make. No shortcuts because the dimensions are different.",
+      feature1: "Any dimension: width, length, and height",
       feature2: "Reinforced builds for heavy or fragile loads",
       feature3: "Export-ready construction for international shipping",
       feature4: "Bulk orders with consistent production quality",
@@ -206,8 +206,8 @@ const en = {
     drums: {
       eyebrow: "Cable & Electrical Industry",
       heading: "Wooden Cable Drums & Reels",
-      body: "Wooden cable drums — also called cable reels — are the industry-standard packaging for power cables, fiber optic lines, armored cables, and steel wire rope. Our drums are built from dense eucalyptus with solid double flanges and a bolted barrel core that holds high winding tension without bowing or cracking. The centered arbor hole fits standard unwinding equipment for fast, controlled deployment on site. Available in flange diameters from 400mm to 2,500mm — built to your cable specifications.",
-      feature1: "Flange diameters from 400mm to 2,500mm — built to your cable specs",
+      body: "Wooden cable drums, also called cable reels, are the industry-standard packaging for power cables, fiber optic lines, armored cables, and steel wire rope. Our drums are built from dense eucalyptus with solid double flanges and a bolted barrel core that holds high winding tension without bowing or cracking. The centered arbor hole fits standard unwinding equipment for fast, controlled deployment on site. Available in flange diameters from 400mm to 2,500mm, built to your cable specifications.",
+      feature1: "Flange diameters from 400mm to 2,500mm, built to your cable specs",
       feature2: "Double-flange bolted construction handles winding tension without warping",
       feature3: "Suitable for power cable, fiber optic, armored cable, and steel wire rope",
       feature4: "Central arbor hole fits standard unwinding and transport equipment",
@@ -219,7 +219,7 @@ const en = {
       body: "Not all wood performs the same under industrial conditions. Eucalyptus is our choice because it outperforms in the environments our customers actually work in.",
       highDensity: {
         title: "High Density",
-        body: "Naturally dense grain gives eucalyptus exceptional load-bearing strength — so pallets don't bow under heavy stock and crates don't crack mid-shipment.",
+        body: "Naturally dense grain gives eucalyptus exceptional load-bearing strength, so pallets don't bow under heavy stock and crates don't crack mid-shipment.",
       },
       moistureResistant: {
         title: "Moisture Resistant",
@@ -227,11 +227,11 @@ const en = {
       },
       durableUnderPressure: {
         title: "Durable Under Pressure",
-        body: "Resists cracking and splitting under heavy loads — critical for export and multi-stack warehouse storage.",
+        body: "Resists cracking and splitting under heavy loads. Critical for export and multi-stack warehouse storage.",
       },
       locallySourced: {
         title: "Locally Sourced",
-        body: "Eucalyptus grows fast and is widely available in Egypt — which means consistent material supply, shorter lead times, and no dependence on imported wood.",
+        body: "Eucalyptus grows fast and is widely available in Egypt, which means consistent material supply, shorter lead times, and no dependence on imported wood.",
       },
     },
     cta: {

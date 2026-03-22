@@ -93,7 +93,7 @@ function Home() {
             {/* Wooden Boxes card */}
             <Link to="/services#boxes" className="reveal reveal-delay-2 group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
               <div className="aspect-[4/3] overflow-hidden">
-                <img src="/images/wooden-boxes.png" alt="Premium wooden boxes for storage, agriculture, and packaging" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src="/images/wooden-boxes.png" alt="Eucalyptus wooden boxes and open crates for storage, agriculture, and packaging" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="p-6 lg:p-8">
                 <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.boxes.title')}</h3>
