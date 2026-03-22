@@ -35,12 +35,12 @@ function Services() {
       <section id="pallets" className="py-24 lg:py-32 bg-warm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="reveal-left">
+            <div>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img src="/images/wooden-pallets.png" alt="Eucalyptus wooden pallets for warehousing and logistics" className="w-full h-full object-cover" />
               </div>
             </div>
-            <div className="reveal-right">
+            <div>
               <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('services.pallets.eyebrow')}</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">{t('services.pallets.heading')}</h2>
               <div className="mt-6 space-y-4 text-muted leading-relaxed">
@@ -65,7 +65,7 @@ function Services() {
       <section id="boxes" className="py-24 lg:py-32 bg-ivory">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="reveal-left order-2 lg:order-1">
+            <div className="order-2 lg:order-1">
               <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('services.boxes.eyebrow')}</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">{t('services.boxes.heading')}</h2>
               <div className="mt-6 space-y-4 text-muted leading-relaxed">
@@ -82,7 +82,7 @@ function Services() {
                 <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </Link>
             </div>
-            <div className="reveal-right order-1 lg:order-2">
+            <div className="order-1 lg:order-2">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img src="/images/wooden-boxes.png" alt="Premium eucalyptus wooden boxes for storage and transport" className="w-full h-full object-cover" />
               </div>
@@ -95,12 +95,12 @@ function Services() {
       <section id="crates" className="py-24 lg:py-32 bg-warm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="reveal-left">
+            <div>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img src="/images/image10.png" alt="Eucalyptus wooden crates for export and logistics" className="w-full h-full object-cover" />
               </div>
             </div>
-            <div className="reveal-right">
+            <div>
               <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('services.crates.eyebrow')}</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">{t('services.crates.heading')}</h2>
               <div className="mt-6 space-y-4 text-muted leading-relaxed">
@@ -125,7 +125,7 @@ function Services() {
       <section id="custom" className="py-24 lg:py-32 bg-ivory">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="reveal-left order-2 lg:order-1">
+            <div className="order-2 lg:order-1">
               <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('services.custom.eyebrow')}</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">{t('services.custom.heading')}</h2>
               <div className="mt-6 space-y-4 text-muted leading-relaxed">
@@ -142,7 +142,7 @@ function Services() {
                 <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </Link>
             </div>
-            <div className="reveal-right order-1 lg:order-2">
+            <div className="order-1 lg:order-2">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img src="/images/wood-craftsmanship.png" alt="Custom wood packaging production" className="w-full h-full object-cover" />
               </div>
