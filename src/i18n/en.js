@@ -58,6 +58,16 @@ const en = {
         body: "The right choice when shipments need structural containment. Built for international export, heavy industrial goods, and long-distance distribution.",
         cta: "See Details",
       },
+      drums: {
+        title: "Wooden Cable Drums & Reels",
+        body: "Industry-standard packaging for power cables, fiber optic lines, and armored cables. Built from eucalyptus with double flanges and a bolted barrel core.",
+        cta: "See Details",
+      },
+      glassCrates: {
+        title: "Wooden Glass Crates",
+        body: "Purpose-built wooden crates for safe transport of fragile glass panels. Strong framing and structural support for storage, loading, and export operations.",
+        cta: "See Details",
+      },
     },
     philosophy: {
       eyebrow: "Our Philosophy",
@@ -212,6 +222,16 @@ const en = {
       feature3: "Suitable for power cable, fiber optic, armored cable, and steel wire rope",
       feature4: "Central arbor hole fits standard unwinding and transport equipment",
       cta: "Get a Cable Drum Quote",
+    },
+    glassCrates: {
+      eyebrow: "Glass Transport",
+      heading: "Wooden Glass Crates",
+      body: "Our wooden glass crates are designed to protect and transport fragile glass panels with maximum stability and care. Built with strong timber framing and secure structural support, they provide reliable handling for storage, loading, and export operations. Each crate is crafted to reduce movement, improve protection, and give businesses confidence when shipping delicate glass products.",
+      feature1: "Built for safe glass transport",
+      feature2: "Strong reinforced frame construction",
+      feature3: "Suitable for storage and export use",
+      feature4: "Designed for stability and protection",
+      cta: "Discuss Your Glass Crates",
     },
     eucalyptus: {
       eyebrow: "Our Material",

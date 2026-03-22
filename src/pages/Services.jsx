@@ -181,6 +181,36 @@ function Services() {
         </div>
       </section>
 
+      {/* Wooden Glass Crates */}
+      <section id="glass-crates" className="py-24 lg:py-32 bg-ivory">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="order-2 lg:order-1">
+              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('services.glassCrates.eyebrow')}</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">{t('services.glassCrates.heading')}</h2>
+              <div className="mt-6 space-y-4 text-muted leading-relaxed">
+                <p>{t('services.glassCrates.body')}</p>
+              </div>
+              <ul className="mt-8 space-y-3">
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.glassCrates.feature1')}</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.glassCrates.feature2')}</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.glassCrates.feature3')}</li>
+                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.glassCrates.feature4')}</li>
+              </ul>
+              <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                {t('services.glassCrates.cta')}
+                <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+              </Link>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <img src="/images/wooden-glass-crates.png" alt="Wooden glass crates for safe transport and export of glass panels" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Eucalyptus */}
       <section className="py-24 lg:py-32 bg-charcoal text-warm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

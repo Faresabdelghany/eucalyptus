@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import useScrollReveal from '../hooks/useScrollReveal';
@@ -6,6 +7,55 @@ import { useLanguage } from '../context/LanguageContext.jsx';
 function Home() {
   const { t } = useLanguage();
   useScrollReveal();
+
+  const sliderRef = useRef(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+  const isPaused = useRef(false);
+
+  const onSliderScroll = () => {
+    const el = sliderRef.current;
+    if (!el) return;
+    const scrollLeft = Math.round(Math.abs(el.scrollLeft));
+    setAtStart(scrollLeft <= 4);
+    setAtEnd(scrollLeft >= el.scrollWidth - el.clientWidth - 4);
+  };
+
+  const slideBy = (dir) => {
+    const el = sliderRef.current;
+    if (!el) return;
+    const card = el.firstElementChild;
+    const cardWidth = card ? card.offsetWidth + 24 : el.clientWidth / 3;
+    const isRtl = document.documentElement.dir === 'rtl';
+    el.scrollBy({ left: dir * cardWidth * (isRtl ? -1 : 1), behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    const el = sliderRef.current;
+    if (!el) return;
+    const scrollLeft = Math.round(Math.abs(el.scrollLeft));
+    setAtStart(scrollLeft <= 4);
+    setAtEnd(scrollLeft >= el.scrollWidth - el.clientWidth - 4);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      if (isPaused.current) return;
+      const el = sliderRef.current;
+      if (!el) return;
+      const scrollLeft = Math.round(Math.abs(el.scrollLeft));
+      const isAtEnd = scrollLeft >= el.scrollWidth - el.clientWidth - 4;
+      const card = el.firstElementChild;
+      const cardWidth = card ? card.offsetWidth + 24 : el.clientWidth / 3;
+      const isRtl = document.documentElement.dir === 'rtl';
+      if (isAtEnd) {
+        el.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        el.scrollBy({ left: cardWidth * (isRtl ? -1 : 1), behavior: 'smooth' });
+      }
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <main>
@@ -75,49 +125,103 @@ function Home() {
             <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('home.products.eyebrow')}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-tight">{t('home.products.heading')}</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {/* Wooden Pallets card */}
-            <Link to="/services#pallets" className="reveal reveal-delay-1 group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img src="/images/pallet-product.png" alt="Eucalyptus wooden pallets for industrial and logistics use" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div className="p-6 lg:p-8">
-                <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.pallets.title')}</h3>
-                <p className="mt-3 text-sm text-muted leading-relaxed">{t('home.products.pallets.body')}</p>
-                <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
-                  {t('home.products.pallets.cta')}
-                  <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </span>
-              </div>
-            </Link>
-            {/* Wooden Boxes card */}
-            <Link to="/services#boxes" className="reveal reveal-delay-2 group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img src="/images/wooden-boxes.png" alt="Eucalyptus wooden boxes and open crates for storage, agriculture, and packaging" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div className="p-6 lg:p-8">
-                <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.boxes.title')}</h3>
-                <p className="mt-3 text-sm text-muted leading-relaxed">{t('home.products.boxes.body')}</p>
-                <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
-                  {t('home.products.boxes.cta')}
-                  <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </span>
-              </div>
-            </Link>
-            {/* Wooden Crates card */}
-            <Link to="/services#crates" className="reveal reveal-delay-3 group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img src="/images/wooden-crates.png" alt="Durable wooden crates for export, distribution, and logistics" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div className="p-6 lg:p-8">
-                <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.crates.title')}</h3>
-                <p className="mt-3 text-sm text-muted leading-relaxed">{t('home.products.crates.body')}</p>
-                <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
-                  {t('home.products.crates.cta')}
-                  <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </span>
-              </div>
-            </Link>
+          <div className="relative">
+            {/* Left arrow */}
+            <button
+              onClick={() => slideBy(-1)}
+              disabled={atStart}
+              aria-label="Previous"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 flex items-center justify-center w-12 h-12 rounded-full bg-warm-cream border border-charcoal/20 text-charcoal hover:border-amber hover:text-amber shadow-sm disabled:opacity-0 disabled:pointer-events-none transition-all duration-300"
+            >
+              <svg className="w-4 h-4 rotate-180 rtl:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+            {/* Right arrow */}
+            <button
+              onClick={() => slideBy(1)}
+              disabled={atEnd}
+              aria-label="Next"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 flex items-center justify-center w-12 h-12 rounded-full bg-warm-cream border border-charcoal/20 text-charcoal hover:border-amber hover:text-amber shadow-sm disabled:opacity-0 disabled:pointer-events-none transition-all duration-300"
+            >
+              <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+            <div
+              ref={sliderRef}
+              onScroll={onSliderScroll}
+              onMouseEnter={() => { isPaused.current = true; }}
+              onMouseLeave={() => { isPaused.current = false; }}
+              className="flex gap-6 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
+              {/* Wooden Pallets card */}
+              <Link to="/services#pallets" className="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src="/images/pallet-product.png" alt="Eucalyptus wooden pallets for industrial and logistics use" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <div className="p-6 lg:p-8">
+                  <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.pallets.title')}</h3>
+                  <p className="mt-3 text-sm text-muted leading-relaxed">{t('home.products.pallets.body')}</p>
+                  <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
+                    {t('home.products.pallets.cta')}
+                    <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                  </span>
+                </div>
+              </Link>
+              {/* Wooden Cable Drums card */}
+              <Link to="/services#drums" className="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src="/images/wooden-cable-drums.png" alt="Wooden cable drum reel manufactured from eucalyptus timber for electrical and telecom cable winding" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <div className="p-6 lg:p-8">
+                  <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.drums.title')}</h3>
+                  <p className="mt-3 text-sm text-muted leading-relaxed">{t('home.products.drums.body')}</p>
+                  <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
+                    {t('home.products.drums.cta')}
+                    <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                  </span>
+                </div>
+              </Link>
+              {/* Wooden Glass Crates card */}
+              <Link to="/services#glass-crates" className="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src="/images/wooden-glass-crates.png" alt="Wooden glass crates for safe transport and export of fragile glass panels" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <div className="p-6 lg:p-8">
+                  <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.glassCrates.title')}</h3>
+                  <p className="mt-3 text-sm text-muted leading-relaxed">{t('home.products.glassCrates.body')}</p>
+                  <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
+                    {t('home.products.glassCrates.cta')}
+                    <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                  </span>
+                </div>
+              </Link>
+              {/* Wooden Boxes card */}
+              <Link to="/services#boxes" className="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src="/images/wooden-boxes.png" alt="Eucalyptus wooden boxes and open crates for storage, agriculture, and packaging" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <div className="p-6 lg:p-8">
+                  <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.boxes.title')}</h3>
+                  <p className="mt-3 text-sm text-muted leading-relaxed">{t('home.products.boxes.body')}</p>
+                  <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
+                    {t('home.products.boxes.cta')}
+                    <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                  </span>
+                </div>
+              </Link>
+              {/* Wooden Crates card */}
+              <Link to="/services#crates" className="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src="/images/wooden-crates.png" alt="Durable wooden crates for export, distribution, and logistics" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <div className="p-6 lg:p-8">
+                  <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.crates.title')}</h3>
+                  <p className="mt-3 text-sm text-muted leading-relaxed">{t('home.products.crates.body')}</p>
+                  <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
+                    {t('home.products.crates.cta')}
+                    <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                  </span>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
