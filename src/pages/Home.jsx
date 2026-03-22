@@ -53,7 +53,7 @@ function Home() {
       } else {
         el.scrollBy({ left: cardWidth * (isRtl ? -1 : 1), behavior: 'smooth' });
       }
-    }, 1000);
+    }, 2000);
     return () => clearInterval(id);
   }, []);
 
