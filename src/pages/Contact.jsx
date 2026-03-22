@@ -152,6 +152,7 @@ function Contact() {
                       <option value="wooden-boxes">{t('contact.form.serviceOptions.boxes')}</option>
                       <option value="wooden-crates">{t('contact.form.serviceOptions.crates')}</option>
                       <option value="custom-packaging">{t('contact.form.serviceOptions.custom')}</option>
+                      <option value="wooden-cable-drums">{t('contact.form.serviceOptions.drums')}</option>
                       <option value="other">{t('contact.form.serviceOptions.other')}</option>
                     </select>
                   </div>

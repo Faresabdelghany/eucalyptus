@@ -46,6 +46,7 @@ function Footer() {
               <li><Link to="/services#boxes" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.woodenBoxes')}</Link></li>
               <li><Link to="/services#crates" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.woodenCrates')}</Link></li>
               <li><Link to="/services#custom" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.customPackaging')}</Link></li>
+              <li><Link to="/services#drums" className="text-sm text-warm-cream/60 hover:text-amber transition-colors duration-200">{t('footer.woodenCableDrums')}</Link></li>
             </ul>
           </div>
           {/* Contact Info */}

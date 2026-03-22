@@ -19,6 +19,7 @@ const en = {
     woodenBoxes: "Wooden Boxes",
     woodenCrates: "Wooden Crates",
     customPackaging: "Custom Packaging",
+    woodenCableDrums: "Wooden Cable Drums & Reels",
     getInTouch: "Get in Touch",
     copyright: "© 2026 Eucalyptus Wood Pallet. All rights reserved.",
     handcrafted: "Handcrafted in Cairo, Egypt",
@@ -153,9 +154,9 @@ const en = {
   services: {
     meta: {
       title:
-        "Wooden Pallets, Boxes, Crates & Custom Packaging Cairo | Eucalyptus Wood Pallet",
+        "Wooden Pallets, Boxes, Crates, Cable Drums & Custom Packaging Cairo | Eucalyptus Wood Pallet",
       description:
-        "We manufacture wooden pallets, boxes, crates, and custom packaging from eucalyptus wood. Serving factories, warehouses, exporters, and agricultural businesses across Egypt.",
+        "We manufacture wooden pallets, boxes, crates, cable drums, and custom packaging from eucalyptus wood. Serving factories, warehouses, exporters, and cable manufacturers across Egypt.",
     },
     hero: {
       eyebrow: "What We Do",
@@ -201,6 +202,16 @@ const en = {
       feature3: "Export-ready construction for international shipping",
       feature4: "Bulk orders with consistent production quality",
       cta: "Discuss Your Requirements",
+    },
+    drums: {
+      eyebrow: "Cable & Electrical Industry",
+      heading: "Wooden Cable Drums & Reels",
+      body: "Wooden cable drums — also called cable reels — are the industry-standard packaging for power cables, fiber optic lines, armored cables, and steel wire rope. Our drums are built from dense eucalyptus with solid double flanges and a bolted barrel core that holds high winding tension without bowing or cracking. The centered arbor hole fits standard unwinding equipment for fast, controlled deployment on site. Available in flange diameters from 400mm to 2,500mm — built to your cable specifications.",
+      feature1: "Flange diameters from 400mm to 2,500mm — built to your cable specs",
+      feature2: "Double-flange bolted construction handles winding tension without warping",
+      feature3: "Suitable for power cable, fiber optic, armored cable, and steel wire rope",
+      feature4: "Central arbor hole fits standard unwinding and transport equipment",
+      cta: "Get a Cable Drum Quote",
     },
     eucalyptus: {
       eyebrow: "Our Material",
@@ -261,6 +272,7 @@ const en = {
         boxes: "Wooden Boxes",
         crates: "Wooden Crates",
         custom: "Custom Packaging",
+        drums: "Wooden Cable Drums",
         other: "Other",
       },
       messageLabel: "Tell Us About Your Order",
