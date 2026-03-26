@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import useScrollReveal from '../hooks/useScrollReveal';
 import { useLanguage } from '../context/LanguageContext.jsx';
+import ServiceSection from '../components/ServiceSection.jsx';
 
 function Services() {
   const { t } = useLanguage();
@@ -18,7 +19,7 @@ function Services() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://eucalyptuswoodpallet.com/services" />
       </Helmet>
-      {/* Hero */}
+
       <section className="relative h-[65vh] min-h-[480px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src="/images/services-hero.png" alt="Eucalyptus Wood Pallet products showcase" className="w-full h-full object-cover object-[8%_top] sm:object-[20%_10%] md:object-[30%_12%] lg:object-[25%_15%]" />
@@ -31,187 +32,114 @@ function Services() {
         </div>
       </section>
 
-      {/* Wooden Pallets */}
-      <section id="pallets" className="py-24 lg:py-32 bg-warm-cream">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/images/wooden-pallets.png" alt="Eucalyptus wooden pallets for warehousing and logistics" className="w-full h-full object-cover" />
-              </div>
-            </div>
-            <div>
-              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('services.pallets.eyebrow')}</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">{t('services.pallets.heading')}</h2>
-              <div className="mt-6 space-y-4 text-muted leading-relaxed">
-                <p>{t('services.pallets.body')}</p>
-              </div>
-              <ul className="mt-8 space-y-3">
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.pallets.feature1')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.pallets.feature2')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.pallets.feature3')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.pallets.feature4')}</li>
-              </ul>
-              <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                {t('services.pallets.cta')}
-                <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceSection
+        id="pallets"
+        bg="bg-warm-cream"
+        imageRight={false}
+        imgSrc="/images/wooden-pallets.png"
+        imgAlt="Eucalyptus wooden pallets for warehousing and logistics"
+        eyebrow={t('services.pallets.eyebrow')}
+        heading={t('services.pallets.heading')}
+        body={t('services.pallets.body')}
+        features={[
+          t('services.pallets.feature1'),
+          t('services.pallets.feature2'),
+          t('services.pallets.feature3'),
+          t('services.pallets.feature4'),
+        ]}
+        ctaLabel={t('services.pallets.cta')}
+      />
 
-      {/* Wooden Boxes */}
-      <section id="boxes" className="py-24 lg:py-32 bg-ivory">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="order-2 lg:order-1">
-              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('services.boxes.eyebrow')}</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">{t('services.boxes.heading')}</h2>
-              <div className="mt-6 space-y-4 text-muted leading-relaxed">
-                <p>{t('services.boxes.body')}</p>
-              </div>
-              <ul className="mt-8 space-y-3">
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.boxes.feature1')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.boxes.feature2')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.boxes.feature3')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.boxes.feature4')}</li>
-              </ul>
-              <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                {t('services.boxes.cta')}
-                <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-              </Link>
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/images/wooden-boxes.png" alt="Eucalyptus wooden boxes and crates — enclosed shipping box and open slatted crate for storage and transport" className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceSection
+        id="boxes"
+        bg="bg-ivory"
+        imageRight={true}
+        imgSrc="/images/wooden-boxes.png"
+        imgAlt="Eucalyptus wooden boxes and crates — enclosed shipping box and open slatted crate for storage and transport"
+        eyebrow={t('services.boxes.eyebrow')}
+        heading={t('services.boxes.heading')}
+        body={t('services.boxes.body')}
+        features={[
+          t('services.boxes.feature1'),
+          t('services.boxes.feature2'),
+          t('services.boxes.feature3'),
+          t('services.boxes.feature4'),
+        ]}
+        ctaLabel={t('services.boxes.cta')}
+      />
 
-      {/* Wooden Crates */}
-      <section id="crates" className="py-24 lg:py-32 bg-warm-cream">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/images/image10.png" alt="Eucalyptus wooden crates for export and logistics" className="w-full h-full object-cover" />
-              </div>
-            </div>
-            <div>
-              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('services.crates.eyebrow')}</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">{t('services.crates.heading')}</h2>
-              <div className="mt-6 space-y-4 text-muted leading-relaxed">
-                <p>{t('services.crates.body')}</p>
-              </div>
-              <ul className="mt-8 space-y-3">
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.crates.feature1')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.crates.feature2')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.crates.feature3')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.crates.feature4')}</li>
-              </ul>
-              <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                {t('services.crates.cta')}
-                <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceSection
+        id="crates"
+        bg="bg-warm-cream"
+        imageRight={false}
+        imgSrc="/images/image10.png"
+        imgAlt="Eucalyptus wooden crates for export and logistics"
+        eyebrow={t('services.crates.eyebrow')}
+        heading={t('services.crates.heading')}
+        body={t('services.crates.body')}
+        features={[
+          t('services.crates.feature1'),
+          t('services.crates.feature2'),
+          t('services.crates.feature3'),
+          t('services.crates.feature4'),
+        ]}
+        ctaLabel={t('services.crates.cta')}
+      />
 
-      {/* Custom Packaging */}
-      <section id="custom" className="py-24 lg:py-32 bg-ivory">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="order-2 lg:order-1">
-              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('services.custom.eyebrow')}</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">{t('services.custom.heading')}</h2>
-              <div className="mt-6 space-y-4 text-muted leading-relaxed">
-                <p>{t('services.custom.body')}</p>
-              </div>
-              <ul className="mt-8 space-y-3">
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.custom.feature1')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.custom.feature2')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.custom.feature3')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.custom.feature4')}</li>
-              </ul>
-              <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                {t('services.custom.cta')}
-                <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-              </Link>
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/images/wood-craftsmanship.png" alt="Custom wood packaging production" className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceSection
+        id="custom"
+        bg="bg-ivory"
+        imageRight={true}
+        imgSrc="/images/wood-craftsmanship.png"
+        imgAlt="Custom wood packaging production"
+        eyebrow={t('services.custom.eyebrow')}
+        heading={t('services.custom.heading')}
+        body={t('services.custom.body')}
+        features={[
+          t('services.custom.feature1'),
+          t('services.custom.feature2'),
+          t('services.custom.feature3'),
+          t('services.custom.feature4'),
+        ]}
+        ctaLabel={t('services.custom.cta')}
+      />
 
-      {/* Wooden Cable Drums */}
-      <section id="drums" className="py-24 lg:py-32 bg-warm-cream">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/images/wooden-cable-drums.png" alt="Wooden cable drum reel manufactured from eucalyptus timber for electrical and telecom cable winding" className="w-full h-full object-cover" />
-              </div>
-            </div>
-            <div>
-              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('services.drums.eyebrow')}</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">{t('services.drums.heading')}</h2>
-              <div className="mt-6 space-y-4 text-muted leading-relaxed">
-                <p>{t('services.drums.body')}</p>
-              </div>
-              <ul className="mt-8 space-y-3">
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.drums.feature1')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.drums.feature2')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.drums.feature3')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.drums.feature4')}</li>
-              </ul>
-              <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                {t('services.drums.cta')}
-                <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceSection
+        id="drums"
+        bg="bg-warm-cream"
+        imageRight={false}
+        imgSrc="/images/wooden-cable-drums.png"
+        imgAlt="Wooden cable drum reel manufactured from eucalyptus timber for electrical and telecom cable winding"
+        eyebrow={t('services.drums.eyebrow')}
+        heading={t('services.drums.heading')}
+        body={t('services.drums.body')}
+        features={[
+          t('services.drums.feature1'),
+          t('services.drums.feature2'),
+          t('services.drums.feature3'),
+          t('services.drums.feature4'),
+        ]}
+        ctaLabel={t('services.drums.cta')}
+      />
 
-      {/* Wooden Glass Crates */}
-      <section id="glass-crates" className="py-24 lg:py-32 bg-ivory">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="order-2 lg:order-1">
-              <p className="text-amber text-sm font-semibold uppercase tracking-[0.3em] mb-4">{t('services.glassCrates.eyebrow')}</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">{t('services.glassCrates.heading')}</h2>
-              <div className="mt-6 space-y-4 text-muted leading-relaxed">
-                <p>{t('services.glassCrates.body')}</p>
-              </div>
-              <ul className="mt-8 space-y-3">
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.glassCrates.feature1')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.glassCrates.feature2')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.glassCrates.feature3')}</li>
-                <li className="flex items-center gap-3 text-sm text-charcoal"><span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0"></span>{t('services.glassCrates.feature4')}</li>
-              </ul>
-              <Link to="/contact" className="inline-flex items-center mt-8 px-6 py-3 text-sm font-semibold text-charcoal bg-amber rounded-md hover:bg-amber/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                {t('services.glassCrates.cta')}
-                <svg className="ms-2 w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-              </Link>
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/images/wooden-glass-crates.png" alt="Wooden glass crates for safe transport and export of glass panels" className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceSection
+        id="glass-crates"
+        bg="bg-ivory"
+        imageRight={true}
+        imgSrc="/images/wooden-glass-crates.png"
+        imgAlt="Wooden glass crates for safe transport and export of glass panels"
+        eyebrow={t('services.glassCrates.eyebrow')}
+        heading={t('services.glassCrates.heading')}
+        body={t('services.glassCrates.body')}
+        features={[
+          t('services.glassCrates.feature1'),
+          t('services.glassCrates.feature2'),
+          t('services.glassCrates.feature3'),
+          t('services.glassCrates.feature4'),
+        ]}
+        ctaLabel={t('services.glassCrates.cta')}
+      />
 
-      {/* Why Eucalyptus */}
       <section className="py-24 lg:py-32 bg-charcoal text-warm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="reveal text-center max-w-2xl mx-auto mb-16 lg:mb-20">
@@ -252,7 +180,6 @@ function Services() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-24 lg:py-32 bg-warm-cream">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <div className="reveal">

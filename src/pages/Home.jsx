@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import useScrollReveal from '../hooks/useScrollReveal';
 import { useLanguage } from '../context/LanguageContext.jsx';
+import ProductCard from '../components/ProductCard.jsx';
 
 function Home() {
   const { t } = useLanguage();
@@ -17,8 +18,10 @@ function Home() {
     const el = sliderRef.current;
     if (!el) return;
     const scrollLeft = Math.round(Math.abs(el.scrollLeft));
-    setAtStart(scrollLeft <= 4);
-    setAtEnd(scrollLeft >= el.scrollWidth - el.clientWidth - 4);
+    const newAtStart = scrollLeft <= 4;
+    const newAtEnd = scrollLeft >= el.scrollWidth - el.clientWidth - 4;
+    setAtStart(prev => prev === newAtStart ? prev : newAtStart);
+    setAtEnd(prev => prev === newAtEnd ? prev : newAtEnd);
   };
 
   const slideBy = (dir) => {
@@ -31,27 +34,15 @@ function Home() {
   };
 
   useEffect(() => {
-    const el = sliderRef.current;
-    if (!el) return;
-    const scrollLeft = Math.round(Math.abs(el.scrollLeft));
-    setAtStart(scrollLeft <= 4);
-    setAtEnd(scrollLeft >= el.scrollWidth - el.clientWidth - 4);
-  }, []);
-
-  useEffect(() => {
     const id = setInterval(() => {
       if (isPaused.current || window.innerWidth < 1024) return;
       const el = sliderRef.current;
       if (!el) return;
       const scrollLeft = Math.round(Math.abs(el.scrollLeft));
-      const isAtEnd = scrollLeft >= el.scrollWidth - el.clientWidth - 4;
-      const card = el.firstElementChild;
-      const cardWidth = card ? card.offsetWidth + 24 : el.clientWidth / 3;
-      const isRtl = document.documentElement.dir === 'rtl';
-      if (isAtEnd) {
+      if (scrollLeft >= el.scrollWidth - el.clientWidth - 4) {
         el.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        el.scrollBy({ left: cardWidth * (isRtl ? -1 : 1), behavior: 'smooth' });
+        slideBy(1);
       }
     }, 2000);
     return () => clearInterval(id);
@@ -92,7 +83,7 @@ function Home() {
           "sameAs": []
         })}</script>
       </Helmet>
-      {/* Hero Section */}
+
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src="/images/hero-workshop.jpg" alt="Wood packaging production at the Eucalyptus Wood Pallet workshop in Cairo" className="w-full h-full object-cover" />
@@ -118,7 +109,6 @@ function Home() {
         </div>
       </section>
 
-      {/* What We Build Section */}
       <section className="py-24 lg:py-32 bg-warm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="reveal max-w-2xl mb-16 lg:mb-20">
@@ -126,7 +116,6 @@ function Home() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-tight">{t('home.products.heading')}</h2>
           </div>
           <div className="relative">
-            {/* Left arrow */}
             <button
               onClick={() => slideBy(-1)}
               disabled={atStart}
@@ -135,7 +124,6 @@ function Home() {
             >
               <svg className="w-4 h-4 rotate-180 rtl:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </button>
-            {/* Right arrow */}
             <button
               onClick={() => slideBy(1)}
               disabled={atEnd}
@@ -151,82 +139,51 @@ function Home() {
               onMouseLeave={() => { isPaused.current = false; }}
               className="flex flex-col lg:flex-row gap-6 lg:overflow-x-auto lg:snap-x lg:snap-mandatory lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden"
             >
-              {/* Wooden Pallets card */}
-              <Link to="/services#pallets" className="w-full lg:snap-start lg:shrink-0 lg:w-[calc(33.333%-16px)] group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src="/images/pallet-product.png" alt="Eucalyptus wooden pallets for industrial and logistics use" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <div className="p-6 lg:p-8">
-                  <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.pallets.title')}</h3>
-                  <p className="mt-3 text-sm text-muted leading-relaxed">{t('home.products.pallets.body')}</p>
-                  <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
-                    {t('home.products.pallets.cta')}
-                    <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                  </span>
-                </div>
-              </Link>
-              {/* Wooden Cable Drums card */}
-              <Link to="/services#drums" className="w-full lg:snap-start lg:shrink-0 lg:w-[calc(33.333%-16px)] group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src="/images/wooden-cable-drums.png" alt="Wooden cable drum reel manufactured from eucalyptus timber for electrical and telecom cable winding" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <div className="p-6 lg:p-8">
-                  <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.drums.title')}</h3>
-                  <p className="mt-3 text-sm text-muted leading-relaxed">{t('home.products.drums.body')}</p>
-                  <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
-                    {t('home.products.drums.cta')}
-                    <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                  </span>
-                </div>
-              </Link>
-              {/* Wooden Glass Crates card */}
-              <Link to="/services#glass-crates" className="w-full lg:snap-start lg:shrink-0 lg:w-[calc(33.333%-16px)] group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src="/images/wooden-glass-crates.png" alt="Wooden glass crates for safe transport and export of fragile glass panels" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <div className="p-6 lg:p-8">
-                  <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.glassCrates.title')}</h3>
-                  <p className="mt-3 text-sm text-muted leading-relaxed">{t('home.products.glassCrates.body')}</p>
-                  <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
-                    {t('home.products.glassCrates.cta')}
-                    <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                  </span>
-                </div>
-              </Link>
-              {/* Wooden Boxes card */}
-              <Link to="/services#boxes" className="w-full lg:snap-start lg:shrink-0 lg:w-[calc(33.333%-16px)] group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src="/images/wooden-boxes.png" alt="Eucalyptus wooden boxes and open crates for storage, agriculture, and packaging" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <div className="p-6 lg:p-8">
-                  <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.boxes.title')}</h3>
-                  <p className="mt-3 text-sm text-muted leading-relaxed">{t('home.products.boxes.body')}</p>
-                  <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
-                    {t('home.products.boxes.cta')}
-                    <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                  </span>
-                </div>
-              </Link>
-              {/* Wooden Crates card */}
-              <Link to="/services#crates" className="w-full lg:snap-start lg:shrink-0 lg:w-[calc(33.333%-16px)] group block bg-ivory rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src="/images/wooden-crates.png" alt="Durable wooden crates for export, distribution, and logistics" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <div className="p-6 lg:p-8">
-                  <h3 className="text-xl font-semibold text-charcoal group-hover:text-amber transition-colors duration-300">{t('home.products.crates.title')}</h3>
-                  <p className="mt-3 text-sm text-muted leading-relaxed">{t('home.products.crates.body')}</p>
-                  <span className="inline-flex items-center mt-5 text-sm font-medium text-amber group-hover:gap-3 gap-2 transition-all duration-300">
-                    {t('home.products.crates.cta')}
-                    <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                  </span>
-                </div>
-              </Link>
+              <ProductCard
+                to="/services#pallets"
+                imgSrc="/images/pallet-product.png"
+                imgAlt="Eucalyptus wooden pallets for industrial and logistics use"
+                title={t('home.products.pallets.title')}
+                body={t('home.products.pallets.body')}
+                cta={t('home.products.pallets.cta')}
+              />
+              <ProductCard
+                to="/services#drums"
+                imgSrc="/images/wooden-cable-drums.png"
+                imgAlt="Wooden cable drum reel manufactured from eucalyptus timber for electrical and telecom cable winding"
+                title={t('home.products.drums.title')}
+                body={t('home.products.drums.body')}
+                cta={t('home.products.drums.cta')}
+              />
+              <ProductCard
+                to="/services#glass-crates"
+                imgSrc="/images/wooden-glass-crates.png"
+                imgAlt="Wooden glass crates for safe transport and export of fragile glass panels"
+                title={t('home.products.glassCrates.title')}
+                body={t('home.products.glassCrates.body')}
+                cta={t('home.products.glassCrates.cta')}
+              />
+              <ProductCard
+                to="/services#boxes"
+                imgSrc="/images/wooden-boxes.png"
+                imgAlt="Eucalyptus wooden boxes and open crates for storage, agriculture, and packaging"
+                title={t('home.products.boxes.title')}
+                body={t('home.products.boxes.body')}
+                cta={t('home.products.boxes.cta')}
+              />
+              <ProductCard
+                to="/services#crates"
+                imgSrc="/images/wooden-crates.png"
+                imgAlt="Durable wooden crates for export, distribution, and logistics"
+                title={t('home.products.crates.title')}
+                body={t('home.products.crates.body')}
+                cta={t('home.products.crates.cta')}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Philosophy Section */}
       <section className="py-24 lg:py-32 bg-ivory">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -266,7 +223,6 @@ function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img src="/images/about-workshop.jpg" alt="Eucalyptus Wood Pallet workshop in Cairo" className="w-full h-full object-cover" />

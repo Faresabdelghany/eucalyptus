@@ -38,3 +38,6 @@ dist-ssr
 .playwright-mcp/
 skills-lock.json
 i18n-plan-and-prompt.md
+
+# Docs
+docs/
