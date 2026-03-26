@@ -1,6 +1,6 @@
-# Cedar & Stone Cabinetry
+# Eucalyptus Wood Pallet
 
-A handcrafted website for a custom cabinet maker based in Milwaukie, Oregon. Built with React, Vite, and Tailwind CSS v4.
+Website for a wooden packaging manufacturer based in Cairo, Egypt. Built with React, Vite, and Tailwind CSS v4.
 
 ## Tech Stack
 
@@ -8,15 +8,16 @@ A handcrafted website for a custom cabinet maker based in Milwaukie, Oregon. Bui
 - **Vite 7** for fast dev/build
 - **Tailwind CSS v4** with custom theme
 - **Cloudflare Pages** for deployment
+- **Resend** for contact form email delivery
 
 ## Pages
 
 | Page | Route | Description |
 |------|-------|-------------|
-| Home | `/` | Hero section, service showcase cards, philosophy with stats, CTA |
+| Home | `/` | Hero, product cards carousel, philosophy with stats, CTA |
 | About | `/about` | Company story, values, 4-step process |
-| Services | `/services` | Kitchen cabinets, bathroom vanities, built-ins, cabinet refacing, materials |
-| Contact | `/contact` | Contact form, business info sidebar, Google Maps embed |
+| Services | `/services` | Pallets, boxes, crates, cable drums, glass crates — anchored sections |
+| Contact | `/contact` | Contact form (Resend API), business info sidebar |
 
 ## Design System
 
@@ -30,79 +31,65 @@ A handcrafted website for a custom cabinet maker based in Milwaukie, Oregon. Bui
 | Deep Walnut | `#5c3d2e` | Secondary accent |
 | Ivory | `#fefcf7` | Card backgrounds |
 | Muted | `#9a9087` | Secondary text |
-| Sage | `#8b9e7e` | Success states |
 
 ### Fonts
 
-- **Playfair Display** - Headings
-- **DM Sans** - Body text
+- **Playfair Display** — Headings (EN)
+- **Readex Pro** — All text (AR)
+- **DM Sans** — Body text (EN)
+
+## i18n
+
+Full English/Arabic support. All copy lives in `src/i18n/en.js` and `src/i18n/ar.js`. Language is persisted to `localStorage` and switches the document `dir` attribute for RTL layout.
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 18+
-- npm
-
-### Install
-
 ```bash
 npm install
+npm run dev        # Dev server
+npm run build      # Production build
+npm run preview    # Preview via Wrangler (Cloudflare Pages)
+npm run deploy     # Deploy to Cloudflare Pages
 ```
 
-### Development
-
-```bash
-npm run dev
-```
-
-### Build
-
-```bash
-npm run build
-```
-
-### Preview (Cloudflare Pages local)
-
-```bash
-npm run preview
-```
-
-### Deploy
-
-```bash
-npm run deploy
-```
+Requires `RESEND_API_KEY` environment variable for the contact form.
 
 ## Project Structure
 
 ```
 src/
   components/
-    Navbar.jsx          # Fixed nav with mobile menu, scroll effects
-    Footer.jsx          # 4-column footer with contact info
+    Navbar.jsx          # Fixed nav with mobile menu and scroll effects
+    Footer.jsx          # Footer with navigation, services, and contact info
+    ProductCard.jsx     # Reusable product card used in the home carousel
+    ServiceSection.jsx  # Reusable section block used on the Services page
   pages/
-    Home.jsx            # Landing page with hero and service cards
+    Home.jsx            # Landing page with hero, product carousel, and stats
     About.jsx           # Story, values, and process
-    Services.jsx        # Service details and materials showcase
+    Services.jsx        # All product/service detail sections with anchors
     Contact.jsx         # Form with validation and info sidebar
   hooks/
-    useScrollReveal.js  # Intersection Observer for scroll animations
-  App.jsx               # Router setup and layout
-  index.css             # Tailwind config and custom animations
+    useScrollReveal.js  # IntersectionObserver scroll animations
+  i18n/
+    en.js               # English translations
+    ar.js               # Arabic translations
+    index.js            # t(lang, key) resolver
+  context/
+    LanguageContext.jsx  # Language state and direction management
+  App.jsx               # Router setup with ScrollToTop
+  index.css             # Tailwind theme, custom animations, RTL overrides
 public/
   images/               # All site images
   _redirects            # SPA routing for Cloudflare Pages
 functions/
-  api/contact.js        # Cloudflare Pages function for form submission
+  api/contact.js        # Cloudflare Pages function — form submission via Resend
 ```
 
 ## Features
 
-- Fully responsive design (mobile, tablet, desktop)
+- Fully responsive (mobile, tablet, desktop)
+- Arabic / English language toggle with full RTL support
 - Scroll-triggered reveal animations
-- Active page highlighting in navigation
-- Mobile hamburger menu with smooth toggle
-- Contact form with API submission and status feedback
-- Google Maps embed
-- Cloudflare Pages deployment ready
+- Product card carousel on desktop, stacked on mobile
+- Contact form with server-side validation and Resend email delivery
+- Per-page SEO: title, description, canonical URL, Open Graph, and JSON-LD
